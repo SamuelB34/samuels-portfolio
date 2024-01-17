@@ -1,0 +1,106 @@
+.my-experience {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	max-width: 1260px;
+	height: calc(100vh - 32px);
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		text-align: center;
+		&--title {
+			color: #feb3bc;
+			font-family: 'Ubuntu Monospace', monospace;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		&--professional-journey {
+			color: #fff;
+			text-align: center;
+			font-family:
+				Open Sans,
+				sans-serif;
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 800;
+			line-height: normal;
+		}
+	}
+
+	&__section {
+		&-1 {
+			background-color: #075fe4;
+			border-radius: 8px;
+		}
+		&-2 {
+			background-color: #29313d;
+			border-radius: 8px;
+		}
+		&--content {
+			padding: 23px 32px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			&__head {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				&--left {
+					display: flex;
+					align-items: center;
+					&__company {
+						padding-left: 8px;
+						padding-right: 16px;
+						color: #fff;
+						font-family:
+							Open Sans,
+							sans-serif;
+						font-size: 18px;
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+					}
+
+					&__position {
+						color: rgba(255, 255, 255, 0.6);
+						font-family:
+							Open Sans,
+							sans-serif;
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: normal;
+					}
+				}
+			}
+
+			&__paragraph {
+				color: #fff;
+				font-family:
+					Open Sans,
+					sans-serif;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				text-align: justify;
+
+				b {
+					color: #fff;
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 16px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+				}
+			}
+		}
+	}
+}

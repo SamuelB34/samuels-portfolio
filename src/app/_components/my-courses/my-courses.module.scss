@@ -1,0 +1,200 @@
+.my-courses {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 64px;
+	max-width: 1250px;
+	height: calc(100vh - 32px);
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		&--title {
+			color: #feb3bc;
+			text-align: center;
+			font-family: 'Ubuntu Monospace', monospace;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		&--journey {
+			color: #fff;
+			text-align: center;
+			font-family: 'Ubuntu Monospace', monospace;
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 800;
+			line-height: normal;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+
+		&--row {
+			display: grid;
+			grid-template-columns: 295px 55px 1fr;
+			column-gap: 22px;
+			row-gap: 32px;
+			&:not(:last-child) {
+				.my-courses__content--row__center {
+					position: relative;
+					&:after {
+						content: '';
+						width: 2px;
+						height: 64px;
+						background-color: #075fe4;
+						position: absolute;
+						left: 7px;
+						display: block;
+						bottom: -48px;
+					}
+				}
+			}
+			&__left {
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				span {
+					color: #fff;
+					text-align: right;
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 18px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+				}
+			}
+
+			&__center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				&--content {
+					display: flex;
+					align-items: center;
+					gap: 12px;
+					position: relative;
+					&-circle {
+						width: 16px;
+						height: 16px;
+						background-color: #075fe4;
+						border-radius: 8px;
+					}
+					&-line {
+						height: 2px;
+						width: 26px;
+						background-color: #075fe4;
+					}
+				}
+			}
+
+			&__right {
+				span {
+					color: #fff;
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 18px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					b {
+						color: #fff;
+						font-family:
+							Open Sans,
+							sans-serif;
+						font-size: 18px;
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+					}
+				}
+			}
+		}
+	}
+
+	&__education {
+		border-radius: 8px;
+		border: 1px solid #fff;
+		max-width: 686px;
+
+		&--content {
+			padding: 24px;
+			display: flex;
+			align-items: center;
+			gap: 64px;
+
+			&__value {
+				display: flex;
+				flex-direction: column;
+
+				&--white {
+					color: #fff;
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 24px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+				}
+				&--gray {
+					color: rgba(255, 255, 255, 0.5);
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 18px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+				}
+			}
+
+			&__green {
+				color: #5cf6bf;
+				font-family: 'Ubuntu Monospace', monospace;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+			}
+
+			&__first {
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+			}
+
+			&__middle {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				&--bar {
+					height: 73px;
+					width: 2px;
+					background-color: rgba(255, 255, 255, 0.3);
+				}
+			}
+
+			&__right {
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+				&--two {
+					display: flex;
+					gap: 16px;
+				}
+			}
+		}
+	}
+}

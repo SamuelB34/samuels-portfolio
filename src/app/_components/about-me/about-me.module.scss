@@ -1,0 +1,60 @@
+.about-me {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	max-width: 714px;
+	height: calc(100vh - 32px);
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		&--title {
+			color: #f6c15c;
+			font-family: 'Ubuntu Monospace', monospace;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		&--frontend {
+			color: #fff;
+			font-family:
+				Open Sans,
+				sans-serif;
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 800;
+			line-height: normal;
+		}
+
+		&--description {
+			color: #fff;
+			font-family:
+				Open Sans,
+				sans-serif;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			b {
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__technologies {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		&--logos {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 32px;
+			justify-content: center;
+		}
+	}
+}
