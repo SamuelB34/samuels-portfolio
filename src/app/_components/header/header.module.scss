@@ -1,3 +1,5 @@
+@import 'src/shared/scss/_media-queries';
+
 .header {
 	display: flex;
 	align-items: center;
@@ -8,25 +10,35 @@
 	background-color: #1b1e23;
 	z-index: 2;
 
+	&__hamburger {
+		display: block;
+		@include desktop {
+			display: none;
+		}
+	}
+
 	&__home {
 		cursor: pointer;
 	}
 
 	&__pages {
-		display: flex;
-		align-items: center;
-		gap: 32px;
+		display: none;
+		@include desktop {
+			display: flex;
+			align-items: center;
+			gap: 32px;
 
-		&--section {
-			color: #fff;
-			font-family:
-				Open Sans,
-				sans-serif;
-			font-size: 18px;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			cursor: pointer;
+			&--section {
+				color: #fff;
+				font-family:
+					Open Sans,
+					sans-serif;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				cursor: pointer;
+			}
 		}
 	}
 }

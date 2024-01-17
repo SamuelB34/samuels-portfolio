@@ -1,3 +1,5 @@
+@import 'src/shared/scss/_media-queries';
+
 .presentation {
 	display: flex;
 	flex-direction: column;
@@ -6,11 +8,12 @@
 	height: calc(100vh - 32px);
 	scroll-snap-align: center;
 	flex: none;
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		both;
+	animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-	&__photo {
-		-webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-			both;
-		animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	@include tablet {
+		max-width: 248px;
 	}
 
 	&__text {
@@ -18,7 +21,11 @@
 		flex-direction: column;
 		align-items: center;
 		padding-top: 48px;
-		gap: 16px;
+		gap: 24px;
+
+		@include desktop {
+			gap: 16px;
+		}
 
 		&--name {
 			color: #feb3bc;
@@ -36,10 +43,17 @@
 			font-family:
 				Open Sans,
 				sans-serif;
-			font-size: 48px;
 			font-style: normal;
 			font-weight: 700;
-			line-height: 64px;
+
+			@include desktop {
+				line-height: 64px;
+				font-size: 48px;
+			}
+
+			@include tablet {
+				font-size: 24px;
+			}
 		}
 
 		&--button {

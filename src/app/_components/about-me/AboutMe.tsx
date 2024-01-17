@@ -34,54 +34,63 @@ export const AboutMe = ({ id = 'about-me' }: Props) => {
 						alt={'next'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/react.svg'}
 						alt={'react'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/angular.svg'}
 						alt={'angular'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/react-native.svg'}
 						alt={'react-native'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/sass.svg'}
 						alt={'sass'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/typescript.svg'}
 						alt={'typescript'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/nodejs.svg'}
 						alt={'nodejs'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/mongoDB.svg'}
 						alt={'mongoDB'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 					<Image
 						src={'/about-me/mysql.svg'}
 						alt={'mysql'}
 						width={68}
 						height={80}
+						className={styles['about-me__technologies--logos__img']}
 					/>
 				</div>
 			</div>

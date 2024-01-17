@@ -1,12 +1,20 @@
+@import 'src/shared/scss/_media-queries';
+
 .my-experience {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 64px;
 	max-width: 1260px;
 	height: calc(100vh - 32px);
 	scroll-snap-align: center;
 	flex: none;
+	gap: 32px;
+	width: 100%;
+
+	@include desktop {
+		gap: 64px;
+		width: auto;
+	}
 
 	&__top {
 		display: flex;
@@ -28,10 +36,13 @@
 			font-family:
 				Open Sans,
 				sans-serif;
-			font-size: 48px;
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
+			font-size: 24px;
+			@include desktop {
+				font-size: 48px;
+			}
 		}
 	}
 
@@ -48,22 +59,89 @@
 			padding: 23px 32px;
 			display: flex;
 			flex-direction: column;
-			gap: 8px;
+			gap: 24px;
+
+			@include desktop {
+				gap: 8px;
+			}
+
 			&__head {
 				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				flex-direction: column;
+				gap: 4px;
+
+				@include desktop {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+				}
 				&--left {
 					display: flex;
-					align-items: center;
+					flex-direction: column;
+					gap: 4px;
+
+					@include desktop {
+						flex-direction: row;
+						align-items: center;
+					}
+
+					&__top {
+						@include mobile {
+							display: flex;
+							justify-content: space-between;
+						}
+						@include tablet {
+							display: flex;
+							justify-content: space-between;
+						}
+						&--chevron {
+							display: block;
+							@include desktop {
+								display: none;
+							}
+						}
+					}
+
 					&__company {
-						padding-left: 8px;
-						padding-right: 16px;
+						@include desktop {
+							padding-left: 8px;
+							padding-right: 16px;
+						}
 						color: #fff;
 						font-family:
 							Open Sans,
 							sans-serif;
 						font-size: 18px;
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+
+						&-container {
+							display: flex;
+							align-items: center;
+							gap: 8px;
+							@include desktop {
+								gap: 16px;
+							}
+						}
+					}
+
+					&__date {
+						@include desktop {
+							color: #fff;
+							font-family:
+								Open Sans,
+								sans-serif;
+							font-size: 18px;
+							font-style: normal;
+							font-weight: 700;
+							line-height: normal;
+						}
+						color: #fff;
+						font-family:
+							Open Sans,
+							sans-serif;
+						font-size: 14px;
 						font-style: normal;
 						font-weight: 700;
 						line-height: normal;
@@ -82,6 +160,33 @@
 				}
 			}
 
+			&__p-2 {
+				color: #fff;
+				font-family:
+					Open Sans,
+					sans-serif;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				text-align: justify;
+
+				@include desktop {
+					display: none;
+				}
+
+				b {
+					color: #fff;
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 16px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+				}
+			}
+
 			&__paragraph {
 				color: #fff;
 				font-family:
@@ -92,6 +197,11 @@
 				font-weight: 400;
 				line-height: normal;
 				text-align: justify;
+				display: none;
+
+				@include desktop {
+					display: block;
+				}
 
 				b {
 					color: #fff;

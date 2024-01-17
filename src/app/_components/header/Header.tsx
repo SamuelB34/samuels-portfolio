@@ -15,6 +15,14 @@ export const Header = () => {
 		<>
 			<div className={styles['header']}>
 				<Image
+					src={'/header/hamburger-menu.svg'}
+					alt={'logo'}
+					width={66}
+					height={61}
+					className={styles['header__hamburger']}
+				/>
+
+				<Image
 					src={'/header/logo.svg'}
 					alt={'logo'}
 					width={66}
