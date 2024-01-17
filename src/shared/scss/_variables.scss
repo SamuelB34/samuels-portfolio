@@ -1,0 +1,58 @@
+$--primary: #075fe4;
+$--accent: #e75d24;
+$--accent-active: #ff6f33;
+$--dark: #222;
+$--gray: #666;
+$--light-gray: #cccccc;
+$--light: #fff;
+$--3d-gradient: linear-gradient(
+		0deg,
+		rgba(255, 235, 28, 0.2) 0%,
+		rgba(255, 235, 28, 0.2) 100%
+	),
+	linear-gradient(180deg, #f6d001 0%, #ff9c09 100%);
+
+$--3d-gradient-active: linear-gradient(
+	180deg,
+	#ffded0 0%,
+	#ff6f33 17.19%,
+	#e75d24 37.5%,
+	#e75d24 61.46%,
+	#ff6f33 81.77%,
+	#ffd9ca 100%
+);
+$--3d-gradient-hover: linear-gradient(
+	180deg,
+	#ffded0 0%,
+	#ff6f33 17.19%,
+	#e75d24 37.5%,
+	#e75d24 61.46%,
+	#ff6f33 81.77%,
+	#ffd9ca 100%
+);
+
+//Sizes
+$--small: 8px;
+$--medium: 16px;
+$colors: (
+	primary: (
+		100: #9cdaff,
+		200: #5db3e7,
+		300: #3f96cb,
+		400: #2c79a7,
+		500: #1e5678,
+		600: #174765,
+		700: #103850,
+		800: #0a2433,
+	),
+	secondary: (
+		100: #e6e6e6,
+		200: #cccccc,
+		300: #b3b3b3,
+		400: #999999,
+		500: #808080,
+		600: #666666,
+		700: #4d4d4d,
+	)
+	// Puedes agregar más colores aquí...,,,
+);

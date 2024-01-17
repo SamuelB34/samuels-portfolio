@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import styles from './presentation.module.scss'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
@@ -7,6 +8,13 @@ interface Props {
 }
 
 export const Presentation = ({ id = 'presentation' }: Props) => {
+	const scrollToElement = (view: string) => {
+		const element = document.getElementById(view)
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
 	return (
 		<div className={styles['presentation']} id={id}>
 			<Image
@@ -14,6 +22,7 @@ export const Presentation = ({ id = 'presentation' }: Props) => {
 				alt={'photo'}
 				width={263}
 				height={263}
+				className={styles['presentation__photo']}
 			/>
 
 			<div className={styles['presentation__text']}>
@@ -26,7 +35,12 @@ export const Presentation = ({ id = 'presentation' }: Props) => {
 					I’m a Front End Developer
 				</span>
 
-				<SamButton type={'button'}>
+				<SamButton
+					type={'button'}
+					onClick={() => {
+						scrollToElement('contact-me')
+					}}
+				>
 					<span className={styles['presentation__text--button']}>
 						Contact Me
 					</span>

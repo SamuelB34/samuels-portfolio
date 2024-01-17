@@ -5,6 +5,8 @@
 	align-items: center;
 	gap: 64px;
 	height: calc(100vh - 32px);
+	scroll-snap-align: center;
+	flex: none;
 
 	&__top {
 		display: flex;

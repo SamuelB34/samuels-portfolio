@@ -8,6 +8,10 @@
 	background-color: #1b1e23;
 	z-index: 2;
 
+	&__home {
+		cursor: pointer;
+	}
+
 	&__pages {
 		display: flex;
 		align-items: center;
@@ -22,6 +26,7 @@
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
+			cursor: pointer;
 		}
 	}
 }

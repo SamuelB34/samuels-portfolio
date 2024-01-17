@@ -1,0 +1,89 @@
+.contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 64px;
+	scroll-snap-align: center;
+	flex: none;
+	height: calc(100vh - 32px);
+	width: 1240px;
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		&--title {
+			color: #f6c15c;
+			font-family: 'Ubuntu Monospace', monospace;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		&--problem {
+			color: #fff;
+			font-family:
+				Open Sans,
+				sans-serif;
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 800;
+			line-height: normal;
+		}
+
+		&--help {
+			color: #fff;
+			font-family:
+				Open Sans,
+				sans-serif;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		width: 80%;
+
+		&--input-container {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			label {
+				color: #fff;
+				font-family:
+					Open Sans,
+					sans-serif;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+			}
+		}
+
+		&--bottom {
+			padding-top: 16px;
+			display: flex;
+			justify-content: space-between;
+			width: 95%;
+
+			a {
+				color: #a6a6a6;
+				font-family:
+					Open Sans,
+					sans-serif;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+			}
+		}
+	}
+}

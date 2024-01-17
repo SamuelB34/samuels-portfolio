@@ -7,7 +7,6 @@ export const Header = () => {
 	const scrollToElement = (view: string) => {
 		const element = document.getElementById(view)
 		if (element) {
-			console.log(element)
 			element.scrollIntoView({ behavior: 'smooth' })
 		}
 	}
@@ -15,11 +14,19 @@ export const Header = () => {
 	return (
 		<>
 			<div className={styles['header']}>
-				<Image src={'/header/logo.svg'} alt={'logo'} width={66} height={61} />
+				<Image
+					src={'/header/logo.svg'}
+					alt={'logo'}
+					width={66}
+					height={61}
+					className={styles['header__home']}
+					onClick={() => {
+						scrollToElement('presentation')
+					}}
+				/>
 
 				<div className={styles['header__pages']}>
 					<a
-						href="#"
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('about-me')
@@ -28,7 +35,6 @@ export const Header = () => {
 						About me
 					</a>
 					<a
-						href="#"
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('experience')
@@ -37,7 +43,6 @@ export const Header = () => {
 						Experience
 					</a>
 					<a
-						href="#"
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('pieces')
@@ -46,15 +51,19 @@ export const Header = () => {
 						My Pieces
 					</a>
 					<a
-						href="#"
 						className={styles['header__pages--section']}
 						onClick={() => {
-							scrollToElement('contact-me')
+							scrollToElement('education')
 						}}
 					>
 						Courses
 					</a>
-					<SamButton type={'button'}>
+					<SamButton
+						type={'button'}
+						onClick={() => {
+							scrollToElement('contact-me')
+						}}
+					>
 						<>Contact Me</>
 					</SamButton>
 				</div>

@@ -203,7 +203,7 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 										styles['my-courses__education--content__value--gray']
 									}
 								>
-									Advance
+									Advanced
 								</span>
 							</div>
 						</div>

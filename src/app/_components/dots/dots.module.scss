@@ -1,0 +1,27 @@
+.dots {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	position: fixed;
+	bottom: 48px;
+
+	&--active {
+		width: 12px;
+		height: 12px;
+		border: 1px solid #fff;
+		background: none;
+		rotate: 0deg;
+		transition: rotate 0.5s;
+		cursor: pointer;
+	}
+
+	&--inactive {
+		width: 12px;
+		height: 12px;
+		border: 1px solid #fff;
+		background: #fff;
+		rotate: 45deg;
+		transition: rotate 0.5s;
+		cursor: pointer;
+	}
+}

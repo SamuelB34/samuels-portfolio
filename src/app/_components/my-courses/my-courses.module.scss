@@ -5,6 +5,9 @@
 	gap: 64px;
 	max-width: 1250px;
 	height: calc(100vh - 32px);
+	justify-content: center;
+	scroll-snap-align: center;
+	flex: none;
 
 	&__top {
 		display: flex;
@@ -24,7 +27,9 @@
 		&--journey {
 			color: #fff;
 			text-align: center;
-			font-family: 'Ubuntu Monospace', monospace;
+			font-family:
+				Open Sans,
+				sans-serif;
 			font-size: 48px;
 			font-style: normal;
 			font-weight: 800;
