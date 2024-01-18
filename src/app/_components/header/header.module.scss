@@ -7,8 +7,12 @@
 	width: 100%;
 	position: fixed;
 	padding: 40px;
-	background-color: #1b1e23;
 	z-index: 2;
+	background: none;
+
+	@include mobile {
+		padding: 18px;
+	}
 
 	&__hamburger {
 		display: block;
@@ -19,6 +23,10 @@
 
 	&__home {
 		cursor: pointer;
+		@include mobile {
+			width: 48px;
+			height: 42px;
+		}
 	}
 
 	&__pages {

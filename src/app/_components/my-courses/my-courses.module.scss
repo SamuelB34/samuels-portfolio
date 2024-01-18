@@ -1,13 +1,22 @@
+@import 'src/shared/scss/_media-queries';
+
 .my-courses {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 64px;
 	max-width: 1250px;
-	height: calc(100vh - 32px);
 	justify-content: center;
 	scroll-snap-align: center;
 	flex: none;
+	gap: 32px;
+	height: 100vh;
+	@include desktop {
+		height: calc(100vh - 32px);
+		gap: 64px;
+	}
+	@include mobile {
+		gap: 16px;
+	}
 
 	&__top {
 		display: flex;
@@ -30,10 +39,13 @@
 			font-family:
 				Open Sans,
 				sans-serif;
-			font-size: 48px;
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
+			font-size: 24px;
+			@include desktop {
+				font-size: 48px;
+			}
 		}
 	}
 
@@ -41,19 +53,35 @@
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
+		@include mobile {
+			gap: 16px;
+		}
 
 		&--row {
-			display: grid;
-			grid-template-columns: 295px 55px 1fr;
-			column-gap: 22px;
-			row-gap: 32px;
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			@include mobile {
+				gap: 8px;
+			}
+
+			@include desktop {
+				display: grid;
+				grid-template-columns: 295px 55px 1fr;
+				column-gap: 22px;
+				row-gap: 32px;
+			}
 			&:not(:last-child) {
 				.my-courses__content--row__center {
+					display: none;
+					@include desktop {
+						display: block;
+					}
 					position: relative;
 					&:after {
 						content: '';
 						width: 2px;
-						height: 64px;
+						height: 82px;
 						background-color: #075fe4;
 						position: absolute;
 						left: 7px;
@@ -65,10 +93,27 @@
 			&__left {
 				width: 100%;
 				display: flex;
-				justify-content: flex-end;
+				align-items: center;
+				gap: 16px;
+
+				&--dot {
+					@include desktop {
+						display: none;
+					}
+					width: 16px;
+					height: 16px;
+					background-color: #075fe4;
+					border-radius: 8px;
+				}
+
+				@include desktop {
+					justify-content: flex-end;
+				}
 				span {
 					color: #fff;
-					text-align: right;
+					@include desktop {
+						text-align: right;
+					}
 					font-family:
 						Open Sans,
 						sans-serif;
@@ -80,7 +125,10 @@
 			}
 
 			&__center {
-				display: flex;
+				display: none;
+				@include desktop {
+					display: flex;
+				}
 				justify-content: center;
 				align-items: center;
 				&--content {
@@ -104,7 +152,10 @@
 
 			&__right {
 				span {
-					color: #fff;
+					color: rgba(255, 255, 255, 0.5);
+					@include desktop {
+						color: #fff;
+					}
 					font-family:
 						Open Sans,
 						sans-serif;
@@ -112,8 +163,12 @@
 					font-style: normal;
 					font-weight: 400;
 					line-height: normal;
+
 					b {
-						color: #fff;
+						color: rgba(255, 255, 255, 0.5);
+						@include desktop {
+							color: #fff;
+						}
 						font-family:
 							Open Sans,
 							sans-serif;
@@ -130,6 +185,7 @@
 	&__education {
 		border-radius: 8px;
 		border: 1px solid #fff;
+		width: 100%;
 		max-width: 686px;
 
 		&--content {
@@ -137,6 +193,13 @@
 			display: flex;
 			align-items: center;
 			gap: 64px;
+
+			@include mobile {
+				flex-direction: column;
+				gap: 8px;
+				padding: 16px;
+				align-items: flex-start;
+			}
 
 			&__value {
 				display: flex;
@@ -151,6 +214,10 @@
 					font-style: normal;
 					font-weight: 700;
 					line-height: normal;
+
+					@include mobile {
+						font-size: 18px;
+					}
 				}
 				&--gray {
 					color: rgba(255, 255, 255, 0.5);
@@ -184,10 +251,19 @@
 				align-items: center;
 				justify-content: center;
 				height: 100%;
+
+				@include mobile {
+					width: 100%;
+				}
+
 				&--bar {
 					height: 73px;
 					width: 2px;
 					background-color: rgba(255, 255, 255, 0.3);
+					@include mobile {
+						height: 2px;
+						width: 100%;
+					}
 				}
 			}
 

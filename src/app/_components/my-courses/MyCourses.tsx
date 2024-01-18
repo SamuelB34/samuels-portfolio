@@ -18,6 +18,9 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 				{/*Row -  UX Design*/}
 				<div className={styles['my-courses__content--row']}>
 					<div className={styles['my-courses__content--row__left']}>
+						<div
+							className={styles['my-courses__content--row__left--dot']}
+						></div>
 						<span>Foundations of UX Design, Wireframes and Prototype</span>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
@@ -47,6 +50,9 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 				{/*Row - TypeScript*/}
 				<div className={styles['my-courses__content--row']}>
 					<div className={styles['my-courses__content--row__left']}>
+						<div
+							className={styles['my-courses__content--row__left--dot']}
+						></div>
 						<span>TypeScript: Complete Guide and hand manual</span>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
@@ -73,38 +79,12 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 					</div>
 				</div>
 
-				{/*Row - Iconic */}
-				<div className={styles['my-courses__content--row']}>
-					<div className={styles['my-courses__content--row__left']}>
-						<span>Iconic 6: Create iOS and Android apps with Angular</span>
-					</div>
-					<div className={styles['my-courses__content--row__center']}>
-						<div
-							className={styles['my-courses__content--row__center--content']}
-						>
-							<div
-								className={
-									styles['my-courses__content--row__center--content-circle']
-								}
-							></div>
-							<div
-								className={
-									styles['my-courses__content--row__center--content-line']
-								}
-							></div>
-						</div>
-					</div>
-					<div className={styles['my-courses__content--row__right']}>
-						<span>
-							Build <b>iOS and Android apps</b> using Angular with Iconic 6.
-							Short, focused course for quick app development.
-						</span>
-					</div>
-				</div>
-
 				{/*Row - React Native*/}
 				<div className={styles['my-courses__content--row']}>
 					<div className={styles['my-courses__content--row__left']}>
+						<div
+							className={styles['my-courses__content--row__left--dot']}
+						></div>
 						<span>React Native: Create Android and iOS apps with React</span>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
@@ -132,6 +112,7 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 				</div>
 			</div>
 
+			{/*Education & languages*/}
 			<div className={styles['my-courses__education']}>
 				<div className={styles['my-courses__education--content']}>
 					{/*First*/}

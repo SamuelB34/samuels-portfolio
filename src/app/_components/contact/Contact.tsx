@@ -40,9 +40,11 @@ export const Contact = ({ id = 'contact' }: Props) => {
 					<a href={'mailto:samuel.barragan34@hotmail.com'}>
 						samuel.barragan34@hotmail.com
 					</a>
-					<SamButton type={'button'}>
-						<>Contact me</>
-					</SamButton>
+					<div className={styles['contact__right--bottom__btn-container']}>
+						<SamButton type={'button'}>
+							<>Contact me</>
+						</SamButton>
+					</div>
 				</div>
 			</div>
 		</div>

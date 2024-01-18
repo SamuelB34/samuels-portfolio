@@ -6,9 +6,13 @@
 	justify-content: center;
 	gap: 48px;
 	max-width: 714px;
-	height: calc(100vh - 32px);
 	scroll-snap-align: center;
 	flex: none;
+	height: 100vh;
+
+	@include desktop {
+		height: calc(100vh - 32px);
+	}
 
 	&__top {
 		display: flex;
