@@ -8,7 +8,7 @@
 	max-width: 714px;
 	scroll-snap-align: center;
 	flex: none;
-	height: 100vh;
+	height: 100svh;
 
 	@include desktop {
 		height: calc(100vh - 32px);
