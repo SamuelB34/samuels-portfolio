@@ -1,6 +1,7 @@
 @import 'src/shared/scss/_media-queries';
 
 .presentation {
+	z-index: 10;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -11,6 +12,7 @@
 		both;
 	animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 	height: 100svh;
+	width: 100%;
 	@include desktop {
 		height: calc(100vh - 32px);
 	}

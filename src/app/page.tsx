@@ -9,6 +9,9 @@ import { MyCourses } from '@/app/_components/my-courses/MyCourses'
 import { Contact } from '@/app/_components/contact/Contact'
 import { Dots } from '@/app/_components/dots/Dots'
 import { useState } from 'react'
+import Lottie from 'lottie-react'
+
+import lottie from '@/shared/lottie/data.json'
 
 export default function Home() {
 	const [section, setSection] = useState(0)
@@ -28,7 +31,6 @@ export default function Home() {
 			setSection(Math.floor(scroll / offset))
 		}
 	}
-
 	return (
 		<>
 			<Header />
@@ -38,6 +40,11 @@ export default function Home() {
 					handleScroll(event)
 				}}
 			>
+				<Lottie
+					animationData={lottie}
+					className={styles['background-lottie']}
+					loop={false}
+				/>
 				<Presentation id={'presentation'} />
 				<AboutMe id={'about-me'} />
 				<MyExperience id={'experience'} />

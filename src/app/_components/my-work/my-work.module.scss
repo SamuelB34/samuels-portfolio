@@ -2,6 +2,7 @@
 
 .my-work {
 	display: flex;
+	z-index: 10;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -12,7 +13,7 @@
 	height: 100svh;
 	@include desktop {
 		height: calc(100vh - 32px);
-		width: auto;
+		width: 100%;
 	}
 
 	&__top {
