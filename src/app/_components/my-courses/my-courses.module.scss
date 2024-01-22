@@ -96,6 +96,10 @@
 				align-items: center;
 				gap: 16px;
 
+				@include mobile {
+					cursor: pointer;
+				}
+
 				&--dot {
 					@include desktop {
 						display: none;
@@ -104,6 +108,7 @@
 					height: 16px;
 					background-color: #075fe4;
 					border-radius: 8px;
+					min-width: 16px;
 				}
 
 				@include desktop {
@@ -156,6 +161,10 @@
 					@include desktop {
 						color: #fff;
 					}
+
+					@include mobile {
+						display: none;
+					}
 					font-family:
 						Open Sans,
 						sans-serif;
@@ -176,6 +185,40 @@
 						font-style: normal;
 						font-weight: 700;
 						line-height: normal;
+					}
+				}
+
+				p {
+					color: rgba(255, 255, 255, 0.5);
+					@include desktop {
+						color: #fff;
+					}
+					font-family:
+						Open Sans,
+						sans-serif;
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+
+					b {
+						color: rgba(255, 255, 255, 0.5);
+						@include desktop {
+							color: #fff;
+						}
+						font-family:
+							Open Sans,
+							sans-serif;
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+					}
+				}
+				&--chevron {
+					display: none;
+					@include mobile {
+						display: block;
 					}
 				}
 			}

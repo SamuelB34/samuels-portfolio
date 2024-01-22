@@ -1,10 +1,19 @@
 import styles from './my-courses.module.scss'
+import Image from 'next/image'
+import { useState } from 'react'
+import { bool } from 'prop-types'
 
 interface Props {
 	id: string
 }
 
 export const MyCourses = ({ id = 'education' }: Props) => {
+	const [showDescription, setShowDescription] = useState({
+		first: false,
+		second: false,
+		third: false,
+	})
+
 	return (
 		<div className={styles['my-courses']} id={id}>
 			<div className={styles['my-courses__top']}>
@@ -17,11 +26,27 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 			<div className={styles['my-courses__content']}>
 				{/*Row -  UX Design*/}
 				<div className={styles['my-courses__content--row']}>
-					<div className={styles['my-courses__content--row__left']}>
+					<div
+						className={styles['my-courses__content--row__left']}
+						onClick={() => {
+							setShowDescription({
+								first: !showDescription.first,
+								second: false,
+								third: false,
+							})
+						}}
+					>
 						<div
 							className={styles['my-courses__content--row__left--dot']}
 						></div>
 						<span>Foundations of UX Design, Wireframes and Prototype</span>
+						<Image
+							src={'/my-experience/chevron.svg'}
+							alt={'chevron'}
+							width={32}
+							height={32}
+							className={styles['my-courses__content--row__right--chevron']}
+						/>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
 						<div
@@ -44,16 +69,38 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 							Completed <b>Google</b> courses covering UX essentials: research,
 							wireframing, prototyping, and User Experience design.
 						</span>
+						{showDescription.first && (
+							<p>
+								Completed <b>Google</b> courses covering UX essentials:
+								research, wireframing, prototyping, and User Experience design.
+							</p>
+						)}
 					</div>
 				</div>
 
 				{/*Row - TypeScript*/}
 				<div className={styles['my-courses__content--row']}>
-					<div className={styles['my-courses__content--row__left']}>
+					<div
+						className={styles['my-courses__content--row__left']}
+						onClick={() => {
+							setShowDescription({
+								first: false,
+								second: !showDescription.second,
+								third: false,
+							})
+						}}
+					>
 						<div
 							className={styles['my-courses__content--row__left--dot']}
 						></div>
 						<span>TypeScript: Complete Guide and hand manual</span>
+						<Image
+							src={'/my-experience/chevron.svg'}
+							alt={'chevron'}
+							width={32}
+							height={32}
+							className={styles['my-courses__content--row__right--chevron']}
+						/>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
 						<div
@@ -76,16 +123,38 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 							Unlock <b>TypeScript</b> mastery with our hands-on course,
 							covering key concepts and best practices.
 						</span>
+						{showDescription.second && (
+							<p>
+								Unlock <b>TypeScript</b> mastery with our hands-on course,
+								covering key concepts and best practices.
+							</p>
+						)}
 					</div>
 				</div>
 
 				{/*Row - React Native*/}
 				<div className={styles['my-courses__content--row']}>
-					<div className={styles['my-courses__content--row__left']}>
+					<div
+						className={styles['my-courses__content--row__left']}
+						onClick={() => {
+							setShowDescription({
+								first: false,
+								second: false,
+								third: !showDescription.third,
+							})
+						}}
+					>
 						<div
 							className={styles['my-courses__content--row__left--dot']}
 						></div>
 						<span>React Native: Create Android and iOS apps with React</span>
+						<Image
+							src={'/my-experience/chevron.svg'}
+							alt={'chevron'}
+							width={32}
+							height={32}
+							className={styles['my-courses__content--row__right--chevron']}
+						/>
 					</div>
 					<div className={styles['my-courses__content--row__center']}>
 						<div
@@ -108,6 +177,13 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 							Craft Android and iOS apps seamlessly with React Native in our
 							concise course. Accelerate your app development skills.
 						</span>
+
+						{showDescription.third && (
+							<p>
+								Craft Android and iOS apps seamlessly with React Native in our
+								concise course. Accelerate your app development skills.
+							</p>
+						)}
 					</div>
 				</div>
 			</div>

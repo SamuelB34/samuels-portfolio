@@ -16,6 +16,10 @@
 		max-width: 1240px;
 	}
 
+	@include mobile {
+		gap: 32px;
+	}
+
 	&__left {
 		display: flex;
 		flex-direction: column;

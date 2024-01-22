@@ -76,6 +76,11 @@
 					width: 68px;
 					height: 80px;
 				}
+
+				@include mobile {
+					width: 32px;
+					height: 28px;
+				}
 			}
 		}
 	}

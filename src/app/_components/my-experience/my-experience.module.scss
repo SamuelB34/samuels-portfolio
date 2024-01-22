@@ -172,7 +172,7 @@
 				font-style: normal;
 				font-weight: 400;
 				line-height: normal;
-				text-align: justify;
+				text-align: left;
 
 				@include desktop {
 					display: none;
@@ -199,7 +199,7 @@
 				font-style: normal;
 				font-weight: 400;
 				line-height: normal;
-				text-align: justify;
+				text-align: left;
 				display: none;
 
 				@include desktop {
