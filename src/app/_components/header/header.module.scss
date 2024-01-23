@@ -4,10 +4,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
+	width: 100vw;
 	position: fixed;
 	padding: 40px;
-	z-index: 2;
+	z-index: 12;
 	background: none;
 
 	@include mobile {

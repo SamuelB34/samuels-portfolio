@@ -56,7 +56,7 @@ export const Header = () => {
 							scrollToElement('pieces')
 						}}
 					>
-						My Pieces
+						My Projects
 					</a>
 					<a
 						className={styles['header__pages--section']}
