@@ -10,9 +10,11 @@ import { Contact } from '@/app/_components/contact/Contact'
 import { Dots } from '@/app/_components/dots/Dots'
 import { useState } from 'react'
 import Image from 'next/image'
+import { SideMenu } from '@/app/_components/side-menu/SideMenu'
 
 export default function Home() {
 	const [section, setSection] = useState(0)
+	const [menuOpen, setMenuOpen] = useState(false)
 
 	const scrollToElement = (view: string) => {
 		const element = document.getElementById(view)
@@ -33,7 +35,8 @@ export default function Home() {
 
 	return (
 		<>
-			<Header />
+			<Header menuAction={() => setMenuOpen(true)} />
+			<SideMenu opened={menuOpen} backAction={() => setMenuOpen(false)} />
 			<main
 				className={styles.main}
 				onScroll={(event) => {

@@ -1,16 +1,13 @@
-'use client'
 import styles from './header.module.scss'
 import Image from 'next/image'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
+import { scrollToElement } from '@/shared/functions/scrollTo'
 
-export const Header = () => {
-	const scrollToElement = (view: string) => {
-		const element = document.getElementById(view)
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' })
-		}
-	}
+interface Props {
+	menuAction: () => void
+}
 
+export const Header = ({ menuAction }: Props) => {
 	return (
 		<>
 			<div className={styles['header']}>
@@ -20,6 +17,9 @@ export const Header = () => {
 					width={66}
 					height={61}
 					className={styles['header__hamburger']}
+					onClick={() => {
+						menuAction()
+					}}
 				/>
 
 				<Image
@@ -34,38 +34,38 @@ export const Header = () => {
 				/>
 
 				<div className={styles['header__pages']}>
-					<a
+					<span
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('about-me')
 						}}
 					>
 						About me
-					</a>
-					<a
+					</span>
+					<span
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('experience')
 						}}
 					>
 						Experience
-					</a>
-					<a
+					</span>
+					<span
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('pieces')
 						}}
 					>
 						My Projects
-					</a>
-					<a
+					</span>
+					<span
 						className={styles['header__pages--section']}
 						onClick={() => {
 							scrollToElement('education')
 						}}
 					>
 						Courses
-					</a>
+					</span>
 					<SamButton
 						type={'button'}
 						onClick={() => {

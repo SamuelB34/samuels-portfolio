@@ -15,3 +15,12 @@
 	padding: 8px 16px;
 	cursor: pointer;
 }
+
+.loading {
+	border: 0 solid gray !important;
+	background: gray !important;
+	color: #666666;
+	box-shadow: none;
+	width: 136px;
+	cursor: default;
+}
