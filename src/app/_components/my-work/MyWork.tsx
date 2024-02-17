@@ -48,7 +48,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 									collaborative effort within the company I am employed with,
 									specifically designed for a fresh client engagement.`,
 								technologies: 'Next.js, TypeScript, SCSS',
-								preview: '',
+								preview: '/my-work/angel-mobile.svg',
 							})
 							setShowModal(true)
 						}}
@@ -66,7 +66,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 									invites via WhatsApp, tracking views and responses, ensuring 
 									seamless communication and attendance tracking.`,
 								technologies: 'Next.js, TypeScript, SCSS, Node.js, MongoDB',
-								preview: '',
+								preview: '/my-work/sam-mel.png',
 							})
 							setShowModal(true)
 						}}
@@ -110,7 +110,13 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 							</span>
 						</div>
 
-						<div className={styles['modal-content__data--preview']}></div>
+						<div className={styles['modal-content__data--preview']}>
+							<img
+								src={data.preview}
+								alt="preview"
+								className={styles['modal-content__data--preview__img']}
+							/>
+						</div>
 					</div>
 				</SamModal>
 			)}

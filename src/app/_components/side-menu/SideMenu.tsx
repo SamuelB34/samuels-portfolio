@@ -14,6 +14,7 @@ export const SideMenu = ({ opened, backAction }: Props) => {
 	>('side-menu')
 
 	const [menuClass, setMenuClass] = useState(styles['header__pages--section'])
+	const [menuBottomClass, setMenuBottomClass] = useState(styles[''])
 
 	useEffect(() => {
 		setSideMenuClass(opened ? 'side-menu-active' : 'side-menu')
@@ -24,6 +25,7 @@ export const SideMenu = ({ opened, backAction }: Props) => {
 						styles['header__pages--section__animation']
 				: styles['header__pages--section'],
 		)
+		setMenuBottomClass(opened ? styles['content__bottom'] : '')
 	}, [opened])
 
 	return (
@@ -88,6 +90,43 @@ export const SideMenu = ({ opened, backAction }: Props) => {
 					>
 						Contact Me
 					</span>
+				</div>
+			</div>
+
+			<div className={menuBottomClass}>
+				<div className={styles['content__bottom--icons']}>
+					<a
+						href="https://www.linkedin.com/in/samuel-barragan/"
+						target={'_blank'}
+					>
+						<Image
+							src={'/header/linkedin.svg'}
+							className={styles['content__bottom--logo-2']}
+							alt={'logo'}
+							width="23"
+							height="23"
+						/>
+					</a>
+					<Image
+						src={'/header/logo.svg'}
+						alt={'logo'}
+						className={styles['content__bottom--logo']}
+						width="66"
+						height="61"
+						onClick={() => {
+							scrollToElement('presentation')
+							backAction()
+						}}
+					/>
+					<a href="tel:+526865782380">
+						<Image
+							src={'/header/phone.svg'}
+							className={styles['content__bottom--logo-2']}
+							alt={'logo'}
+							width="23"
+							height="23"
+						/>
+					</a>
 				</div>
 			</div>
 		</div>

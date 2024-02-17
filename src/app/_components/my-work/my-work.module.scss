@@ -154,6 +154,12 @@
 			border-radius: 16px;
 			height: 262px;
 			width: 100%;
+			overflow: hidden;
+
+			&__img {
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 }
