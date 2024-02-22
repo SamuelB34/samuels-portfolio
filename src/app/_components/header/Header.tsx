@@ -66,14 +66,16 @@ export const Header = ({ menuAction }: Props) => {
 					>
 						Courses
 					</span>
-					<SamButton
-						type={'button'}
-						onClick={() => {
-							scrollToElement('contact-me')
-						}}
-					>
-						<>Contact Me</>
-					</SamButton>
+					<div className={styles['header__button']}>
+						<SamButton
+							type={'button'}
+							onClick={() => {
+								scrollToElement('contact-me')
+							}}
+						>
+							<>Contact Me</>
+						</SamButton>
+					</div>
 				</div>
 			</div>
 		</>

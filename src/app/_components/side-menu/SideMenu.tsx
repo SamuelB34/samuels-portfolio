@@ -25,7 +25,9 @@ export const SideMenu = ({ opened, backAction }: Props) => {
 						styles['header__pages--section__animation']
 				: styles['header__pages--section'],
 		)
-		setMenuBottomClass(opened ? styles['content__bottom'] : '')
+		setMenuBottomClass(
+			opened ? styles['content__bottom'] : styles['content__bottom-inactive'],
+		)
 	}, [opened])
 
 	return (
