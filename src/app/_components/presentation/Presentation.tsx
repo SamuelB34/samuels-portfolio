@@ -23,6 +23,7 @@ export const Presentation = ({ id = 'presentation' }: Props) => {
 				width={263}
 				height={263}
 				className={styles['presentation__photo']}
+				priority
 			/>
 
 			<div className={styles['presentation__text']}>

@@ -78,60 +78,6 @@ export const MyCourses = ({ id = 'education' }: Props) => {
 					</div>
 				</div>
 
-				{/*Row - TypeScript*/}
-				<div className={styles['my-courses__content--row']}>
-					<div
-						className={styles['my-courses__content--row__left']}
-						onClick={() => {
-							setShowDescription({
-								first: false,
-								second: !showDescription.second,
-								third: false,
-							})
-						}}
-					>
-						<div
-							className={styles['my-courses__content--row__left--dot']}
-						></div>
-						<span>TypeScript: Complete Guide and hand manual</span>
-						<Image
-							src={'/my-experience/chevron.svg'}
-							alt={'chevron'}
-							width={32}
-							height={32}
-							className={styles['my-courses__content--row__right--chevron']}
-						/>
-					</div>
-					<div className={styles['my-courses__content--row__center']}>
-						<div
-							className={styles['my-courses__content--row__center--content']}
-						>
-							<div
-								className={
-									styles['my-courses__content--row__center--content-circle']
-								}
-							></div>
-							<div
-								className={
-									styles['my-courses__content--row__center--content-line']
-								}
-							></div>
-						</div>
-					</div>
-					<div className={styles['my-courses__content--row__right']}>
-						<span>
-							Unlock <b>TypeScript</b> mastery with our hands-on course,
-							covering key concepts and best practices.
-						</span>
-						{showDescription.second && (
-							<p>
-								Unlock <b>TypeScript</b> mastery with our hands-on course,
-								covering key concepts and best practices.
-							</p>
-						)}
-					</div>
-				</div>
-
 				{/*Row - React Native*/}
 				<div className={styles['my-courses__content--row']}>
 					<div

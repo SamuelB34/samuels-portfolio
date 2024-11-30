@@ -39,7 +39,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 						title={'Angel Mobile'}
 						date={'August 2023'}
 						type={'Website'}
-						image={'/my-work/angel-mobile.svg'}
+						image={'/my-work/angel-mobile.webp'}
 						checkMore={() => {
 							setData({
 								name: 'Angel Mobile Landing Page',
@@ -57,7 +57,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 						title={'Wedding App'}
 						date={'January 2024'}
 						type={'Full-Stack App'}
-						image={'/my-work/sam-mel.png'}
+						image={'/my-work/sam-mel.webp'}
 						checkMore={() => {
 							setData({
 								name: 'Wedding App',

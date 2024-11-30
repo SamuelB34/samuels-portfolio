@@ -49,6 +49,7 @@ export default function Home() {
 						alt={'braket'}
 						width={760}
 						height={903}
+						priority
 						className={`${styles['background-lottie']} ${styles[`background-lottie__p-${section}`]}`}
 					/>
 					<Image
@@ -56,6 +57,7 @@ export default function Home() {
 						alt={'braket'}
 						width={760}
 						height={903}
+						loading={'lazy'}
 						className={`${styles['background-lottie-2']} ${styles[`background-lottie-2__p-${section}`]}`}
 					/>
 				</div>

@@ -25,105 +25,94 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 				</div>
 
 				{/*Section*/}
-				<div
-					className={styles['my-experience__section-1']}
-					onClick={() => {
-						setShowFirst(!showFirst)
-					}}
-				>
-					<div className={styles['my-experience__section--content']}>
-						{/*Head*/}
-						<div className={styles['my-experience__section--content__head']}>
-							<div
-								className={
-									styles['my-experience__section--content__head--left']
-								}
-							>
+				{!showSecond && (
+					<div
+						className={styles['my-experience__section-1']}
+						onClick={() => {
+							setShowFirst(!showFirst)
+						}}
+					>
+						<div className={styles['my-experience__section--content']}>
+							{/*Head*/}
+							<div className={styles['my-experience__section--content__head']}>
 								<div
 									className={
-										styles['my-experience__section--content__head--left__top']
+										styles['my-experience__section--content__head--left']
 									}
 								>
 									<div
 										className={
-											styles[
-												'my-experience__section--content__head--left__company-container'
-											]
+											styles['my-experience__section--content__head--left__top']
 										}
 									>
-										<Image
-											src={'/my-experience/code.svg'}
-											alt={'code'}
-											width={36}
-											height={37}
-										/>
-										<span
+										<div
 											className={
 												styles[
-													'my-experience__section--content__head--left__company'
+													'my-experience__section--content__head--left__company-container'
 												]
 											}
 										>
-											Sales Hub
-										</span>
+											<Image
+												src={'/my-experience/code.svg'}
+												alt={'code'}
+												width={36}
+												height={37}
+											/>
+											<span
+												className={
+													styles[
+														'my-experience__section--content__head--left__company'
+													]
+												}
+											>
+												Sales Hub
+											</span>
+										</div>
+
+										<Image
+											src={'/my-experience/chevron.svg'}
+											alt={'chevron'}
+											width="32"
+											height="33"
+											className={
+												styles[
+													'my-experience__section--content__head--left__top--chevron'
+												]
+											}
+										/>
 									</div>
 
-									<Image
-										src={'/my-experience/chevron.svg'}
-										alt={'chevron'}
-										width="32"
-										height="33"
+									<span
 										className={
 											styles[
-												'my-experience__section--content__head--left__top--chevron'
+												'my-experience__section--content__head--left__position'
 											]
 										}
-									/>
+									>
+										Front End Developer
+									</span>
 								</div>
-
-								<span
+								<div
 									className={
-										styles[
-											'my-experience__section--content__head--left__position'
-										]
+										styles['my-experience__section--content__head--right']
 									}
 								>
-									Front End Developer
-								</span>
+									<span
+										className={
+											styles[
+												'my-experience__section--content__head--left__date'
+											]
+										}
+									>
+										June 2022 - Present
+									</span>
+								</div>
 							</div>
-							<div
-								className={
-									styles['my-experience__section--content__head--right']
-								}
+
+							{/*Description*/}
+							<p
+								className={styles['my-experience__section--content__paragraph']}
 							>
-								<span
-									className={
-										styles['my-experience__section--content__head--left__date']
-									}
-								>
-									June 2022 - Present
-								</span>
-							</div>
-						</div>
-
-						{/*Description*/}
-						<p className={styles['my-experience__section--content__paragraph']}>
-							Present As a <b>Front-End Developer</b>, I spearheaded the
-							development of internal UI Kits, significantly reducing
-							development time by 25% and facilitating faster project
-							deliveries. I assumed leadership in front-end projects and
-							architectures, successfully managing systems with thousands of
-							users, complete with role management and proactively initiated
-							proposals to optimize and standardize code practices for future
-							projects and contributed to the refactoring and optimization of
-							landing pages. My skills extended to providing front-end support
-							using frameworks such as Angular and Vue.js, as well as
-							contributing to landing pages, while also offering backend support
-							with Node.js in JavaScript and TypeScript
-						</p>
-
-						{showFirst && (
-							<p className={styles['my-experience__section--content__p-2']}>
 								Present As a <b>Front-End Developer</b>, I spearheaded the
 								development of internal UI Kits, significantly reducing
 								development time by 25% and facilitating faster project
@@ -137,107 +126,116 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 								contributing to landing pages, while also offering backend
 								support with Node.js in JavaScript and TypeScript
 							</p>
-						)}
+
+							{showFirst && (
+								<p className={styles['my-experience__section--content__p-2']}>
+									Present As a <b>Front-End Developer</b>, I spearheaded the
+									development of internal UI Kits, significantly reducing
+									development time by 25% and facilitating faster project
+									deliveries. I assumed leadership in front-end projects and
+									architectures, successfully managing systems with thousands of
+									users, complete with role management and proactively initiated
+									proposals to optimize and standardize code practices for
+									future projects and contributed to the refactoring and
+									optimization of landing pages. My skills extended to providing
+									front-end support using frameworks such as Angular and Vue.js,
+									as well as contributing to landing pages, while also offering
+									backend support with Node.js in JavaScript and TypeScript
+								</p>
+							)}
+						</div>
 					</div>
-				</div>
+				)}
 
 				{/*Section*/}
-				<div
-					className={styles['my-experience__section-2']}
-					onClick={() => {
-						setShowSecond(!showSecond)
-					}}
-				>
-					<div className={styles['my-experience__section--content']}>
-						{/*Head*/}
-						<div className={styles['my-experience__section--content__head']}>
-							<div
-								className={
-									styles['my-experience__section--content__head--left']
-								}
-							>
+				{!showFirst && (
+					<div
+						className={styles['my-experience__section-2']}
+						onClick={() => {
+							setShowSecond(!showSecond)
+						}}
+					>
+						<div className={styles['my-experience__section--content']}>
+							{/*Head*/}
+							<div className={styles['my-experience__section--content__head']}>
 								<div
 									className={
-										styles['my-experience__section--content__head--left__top']
+										styles['my-experience__section--content__head--left']
 									}
 								>
 									<div
 										className={
-											styles[
-												'my-experience__section--content__head--left__company-container'
-											]
+											styles['my-experience__section--content__head--left__top']
 										}
 									>
-										<Image
-											src={'/my-experience/page.svg'}
-											alt={'code'}
-											width={36}
-											height={37}
-										/>
-										<span
+										<div
 											className={
 												styles[
-													'my-experience__section--content__head--left__company'
+													'my-experience__section--content__head--left__company-container'
 												]
 											}
 										>
-											FESMEX
-										</span>
+											<Image
+												src={'/my-experience/page.svg'}
+												alt={'code'}
+												width={36}
+												height={37}
+											/>
+											<span
+												className={
+													styles[
+														'my-experience__section--content__head--left__company'
+													]
+												}
+											>
+												FESMEX
+											</span>
+										</div>
+
+										<Image
+											src={'/my-experience/chevron.svg'}
+											alt={'chevron'}
+											width="32"
+											height="33"
+											className={
+												styles[
+													'my-experience__section--content__head--left__top--chevron'
+												]
+											}
+										/>
 									</div>
 
-									<Image
-										src={'/my-experience/chevron.svg'}
-										alt={'chevron'}
-										width="32"
-										height="33"
+									<span
 										className={
 											styles[
-												'my-experience__section--content__head--left__top--chevron'
+												'my-experience__section--content__head--left__position'
 											]
 										}
-									/>
+									>
+										Jr. Web Developer
+									</span>
 								</div>
-
-								<span
+								<div
 									className={
-										styles[
-											'my-experience__section--content__head--left__position'
-										]
+										styles['my-experience__section--content__head--right']
 									}
 								>
-									Jr. Web Developer
-								</span>
+									<span
+										className={
+											styles[
+												'my-experience__section--content__head--left__date'
+											]
+										}
+									>
+										January 2021 - October 2022
+									</span>
+								</div>
 							</div>
-							<div
-								className={
-									styles['my-experience__section--content__head--right']
-								}
+
+							{/*Description*/}
+							<p
+								className={styles['my-experience__section--content__paragraph']}
 							>
-								<span
-									className={
-										styles['my-experience__section--content__head--left__date']
-									}
-								>
-									January 2021 - October 2022
-								</span>
-							</div>
-						</div>
-
-						{/*Description*/}
-						<p className={styles['my-experience__section--content__paragraph']}>
-							In my role as a <b>Junior Web Developer</b>, I designed and
-							implemented UI Kits for internal landing pages, fostering
-							consistency and efficiency in our development process. I played a
-							pivotal role in proposing standardized code formats, ensuring
-							future projects adhered to best practices. My responsibilities
-							included the development and maintenance of landing pages using
-							React and Angular. I also collaborated closely with the design
-							team to bring their vision to life in the creation of internal
-							landing pages.
-						</p>
-
-						{showSecond && (
-							<p className={styles['my-experience__section--content__p-2']}>
 								In my role as a <b>Junior Web Developer</b>, I designed and
 								implemented UI Kits for internal landing pages, fostering
 								consistency and efficiency in our development process. I played
@@ -248,9 +246,23 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 								team to bring their vision to life in the creation of internal
 								landing pages.
 							</p>
-						)}
+
+							{showSecond && (
+								<p className={styles['my-experience__section--content__p-2']}>
+									In my role as a <b>Junior Web Developer</b>, I designed and
+									implemented UI Kits for internal landing pages, fostering
+									consistency and efficiency in our development process. I
+									played a pivotal role in proposing standardized code formats,
+									ensuring future projects adhered to best practices. My
+									responsibilities included the development and maintenance of
+									landing pages using React and Angular. I also collaborated
+									closely with the design team to bring their vision to life in
+									the creation of internal landing pages.
+								</p>
+							)}
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</>
 	)
