@@ -54,10 +54,34 @@
 		&-1 {
 			background-color: #075fe4;
 			border-radius: 8px;
+
+			&__true {
+				@include mobile {
+					display: none;
+				}
+			}
+
+			&__false {
+				@include mobile {
+					display: block;
+				}
+			}
 		}
 		&-2 {
 			background-color: #29313d;
 			border-radius: 8px;
+
+			&__true {
+				@include mobile {
+					display: none;
+				}
+			}
+
+			&__false {
+				@include mobile {
+					display: block;
+				}
+			}
 		}
 		&--content {
 			max-width: 1260px;
@@ -153,13 +177,13 @@
 					}
 
 					&__position {
-						color: rgba(255, 255, 255, 0.6);
+						color: #fff;
 						font-family:
 							Open Sans,
 							sans-serif;
 						font-size: 14px;
 						font-style: normal;
-						font-weight: 400;
+						font-weight: 300;
 						line-height: normal;
 					}
 				}
@@ -175,6 +199,8 @@
 				font-weight: 400;
 				line-height: normal;
 				text-align: left;
+				max-height: 200px;
+				overflow: scroll;
 
 				@include desktop {
 					display: none;

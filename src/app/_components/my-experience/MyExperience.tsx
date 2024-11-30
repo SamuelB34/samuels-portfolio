@@ -1,7 +1,7 @@
 'use client'
 import styles from './my-experience.module.scss'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface Props {
 	id: string
@@ -10,6 +10,10 @@ interface Props {
 export const MyExperience = ({ id = 'experience' }: Props) => {
 	const [showFirst, setShowFirst] = useState(false)
 	const [showSecond, setShowSecond] = useState(false)
+
+	useEffect(() => {
+		console.log(showFirst)
+	}, [showFirst])
 
 	return (
 		<>
@@ -26,7 +30,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 
 				{/*Section*/}
 				<div
-					className={styles['my-experience__section-1']}
+					className={`${styles['my-experience__section-1']} ${styles['my-experience__section-1__' + showSecond]}`}
 					onClick={() => {
 						setShowFirst(!showFirst)
 					}}
@@ -143,7 +147,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 
 				{/*Section*/}
 				<div
-					className={styles['my-experience__section-2']}
+					className={`${styles['my-experience__section-2']} ${styles['my-experience__section-2__' + showFirst]}`}
 					onClick={() => {
 						setShowSecond(!showSecond)
 					}}

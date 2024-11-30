@@ -26,36 +26,42 @@
 	height: 100%;
 	z-index: 0;
 	overflow: hidden;
+
 	&__p-0 {
 		rotate: 0deg;
 		opacity: 1;
 		left: -30%;
 		transition: all 500ms;
 	}
+
 	&__p-1 {
 		left: -30%;
 		top: 10%;
 		rotate: 0deg;
 		transition: all 500ms;
 	}
+
 	&__p-2 {
 		left: -100%;
 		rotate: 90deg;
 		opacity: 0;
 		transition: all 500ms;
 	}
+
 	&__p-3 {
 		left: -100%;
 		rotate: -90deg;
 		opacity: 0;
 		transition: all 500ms;
 	}
+
 	&__p-4 {
 		left: -100%;
 		rotate: 90deg;
 		opacity: 0;
 		transition: all 500ms;
 	}
+
 	&__p-5 {
 		rotate: 90deg;
 		opacity: 1;
