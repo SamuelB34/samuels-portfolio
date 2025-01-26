@@ -92,7 +92,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 										]
 									}
 								>
-									Front End Developer
+									Senior Front End Developer
 								</span>
 							</div>
 							<div
@@ -112,7 +112,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 
 						{/*Description*/}
 						<p className={styles['my-experience__section--content__paragraph']}>
-							Present As a <b>Front-End Developer</b>, I spearheaded the
+							Present As a <b>Senior Front-End Developer</b>, I spearheaded the
 							development of internal UI Kits, significantly reducing
 							development time by 25% and facilitating faster project
 							deliveries. I assumed leadership in front-end projects and

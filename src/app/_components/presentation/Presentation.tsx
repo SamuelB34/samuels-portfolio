@@ -33,7 +33,7 @@ export const Presentation = ({ id = 'presentation' }: Props) => {
 
 				<span className={styles['presentation__text--description']}>
 					Samuel Barragán <br />
-					I’m a Front End Developer
+					I’m a Senior Full Stack Developer
 				</span>
 
 				<SamButton
