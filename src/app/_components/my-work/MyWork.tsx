@@ -71,6 +71,24 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 							setShowModal(true)
 						}}
 					/>
+					<Project
+						title={'Wedding Invitation'}
+						date={'May 2024'}
+						type={'Landing Page'}
+						image={'/my-work/wedding-invitation.webp'}
+						checkMore={() => {
+							setData({
+								name: 'Wedding App',
+								objective: `
+									This wedding invitation delivers personalized invites via WhatsApp,
+									tracks when guests view them, and collects real-time RSVP responses,
+									ensuring a smooth and elegant guest experience.`,
+								technologies: 'Next.js, TypeScript, SCSS',
+								preview: '/my-work/wedding-invitation.webp',
+							})
+							setShowModal(true)
+						}}
+					/>
 				</div>
 			</div>
 

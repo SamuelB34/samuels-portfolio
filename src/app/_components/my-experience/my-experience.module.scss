@@ -14,7 +14,7 @@
 
 	@include desktop {
 		height: calc(100vh - 32px);
-		gap: 64px;
+		gap: 32px;
 		align-items: center;
 	}
 
@@ -246,5 +246,17 @@
 				}
 			}
 		}
+	}
+}
+
+.is-expanded {
+	@include mobile {
+		display: block;
+	}
+}
+
+.is-collapsed {
+	@include mobile {
+		display: none;
 	}
 }

@@ -10,10 +10,9 @@ interface Props {
 export const MyExperience = ({ id = 'experience' }: Props) => {
 	const [showFirst, setShowFirst] = useState(false)
 	const [showSecond, setShowSecond] = useState(false)
-
-	useEffect(() => {
-		console.log(showFirst)
-	}, [showFirst])
+	const [showSection, setShowSection] = useState<
+		'first' | 'second' | 'third' | null
+	>(null)
 
 	return (
 		<>
@@ -30,9 +29,124 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 
 				{/*Section*/}
 				<div
-					className={`${styles['my-experience__section-1']} ${styles['my-experience__section-1__' + showSecond]}`}
+					className={`${styles['my-experience__section-1']} ${styles['my-experience__section-1__' + (showSection !== null && showSection !== 'first')]}`}
 					onClick={() => {
-						setShowFirst(!showFirst)
+						setShowSection(showSection !== 'first' ? 'first' : null)
+					}}
+				>
+					<div className={styles['my-experience__section--content']}>
+						{/*Head*/}
+						<div className={styles['my-experience__section--content__head']}>
+							<div
+								className={
+									styles['my-experience__section--content__head--left']
+								}
+							>
+								<div
+									className={
+										styles['my-experience__section--content__head--left__top']
+									}
+								>
+									<div
+										className={
+											styles[
+												'my-experience__section--content__head--left__company-container'
+											]
+										}
+									>
+										<Image
+											src={'/my-experience/code.svg'}
+											alt={'code'}
+											width={36}
+											height={37}
+										/>
+										<span
+											className={
+												styles[
+													'my-experience__section--content__head--left__company'
+												]
+											}
+										>
+											Kirana Labs
+										</span>
+									</div>
+
+									<Image
+										src={'/my-experience/chevron.svg'}
+										alt={'chevron'}
+										width="32"
+										height="33"
+										className={
+											styles[
+												'my-experience__section--content__head--left__top--chevron'
+											]
+										}
+									/>
+								</div>
+
+								<span
+									className={
+										styles[
+											'my-experience__section--content__head--left__position'
+										]
+									}
+								>
+									Senior Full Stack Developer
+								</span>
+							</div>
+							<div
+								className={
+									styles['my-experience__section--content__head--right']
+								}
+							>
+								<span
+									className={
+										styles['my-experience__section--content__head--left__date']
+									}
+								>
+									March 2025 - Present
+								</span>
+							</div>
+						</div>
+
+						{/*Description*/}
+						<p className={styles['my-experience__section--content__paragraph']}>
+							Present As a <b>Senior Full Stack Developer</b>, I Engineered
+							end-to-end features within a healthcare platform operating under a
+							complex monorepo architecture, contributing across front-end,
+							back-end, and mobile layers. Built real-time dashboards for data
+							visualization, optimized front-end performance to minimize data
+							usage, and restructured MySQL database schemas to enhance query
+							efficiency. Integrated WebSocket-based real-time data sync and
+							designed UI components using Figma. Leveraged a fullstack tech
+							stack including Next.js, React Native, MySQL, and MongoDB to
+							deliver scalable, performant solutions aligned with healthcare
+							standards.
+						</p>
+
+						{showSection === 'first' && (
+							<p className={styles['my-experience__section--content__p-2']}>
+								Present As a <b>Senior Full Stack Developer</b>, I Engineered
+								end-to-end features within a healthcare platform operating under
+								a complex monorepo architecture, contributing across front-end,
+								back-end, and mobile layers. Built real-time dashboards for data
+								visualization, optimized front-end performance to minimize data
+								usage, and restructured MySQL database schemas to enhance query
+								efficiency. Integrated WebSocket-based real-time data sync and
+								designed UI components using Figma. Leveraged a fullstack tech
+								stack including Next.js, React Native, MySQL, and MongoDB to
+								deliver scalable, performant solutions aligned with healthcare
+								standards.
+							</p>
+						)}
+					</div>
+				</div>
+
+				{/*Section*/}
+				<div
+					className={`${styles['my-experience__section-1']} ${styles['my-experience__section-1__' + (showSection !== null && showSection !== 'second')]}`}
+					onClick={() => {
+						setShowSection(showSection !== 'second' ? 'second' : null)
 					}}
 				>
 					<div className={styles['my-experience__section--content']}>
@@ -105,7 +219,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 										styles['my-experience__section--content__head--left__date']
 									}
 								>
-									June 2022 - Present
+									June 2022 - January 2025
 								</span>
 							</div>
 						</div>
@@ -126,7 +240,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 							with Node.js in JavaScript and TypeScript
 						</p>
 
-						{showFirst && (
+						{showSection === 'second' && (
 							<p className={styles['my-experience__section--content__p-2']}>
 								Present As a <b>Front-End Developer</b>, I spearheaded the
 								development of internal UI Kits, significantly reducing
@@ -147,9 +261,9 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 
 				{/*Section*/}
 				<div
-					className={`${styles['my-experience__section-2']} ${styles['my-experience__section-2__' + showFirst]}`}
+					className={`${styles['my-experience__section-2']} ${styles['my-experience__section-2__' + (showSection !== null && showSection !== 'third')]}`}
 					onClick={() => {
-						setShowSecond(!showSecond)
+						setShowSection(showSection !== 'third' ? 'third' : null)
 					}}
 				>
 					<div className={styles['my-experience__section--content']}>
@@ -240,7 +354,7 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 							landing pages.
 						</p>
 
-						{showSecond && (
+						{showSection === 'third' && (
 							<p className={styles['my-experience__section--content__p-2']}>
 								In my role as a <b>Junior Web Developer</b>, I designed and
 								implemented UI Kits for internal landing pages, fostering
