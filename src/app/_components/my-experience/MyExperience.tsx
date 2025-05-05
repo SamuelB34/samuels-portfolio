@@ -1,7 +1,6 @@
 'use client'
 import styles from './my-experience.module.scss'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ExperienceItem } from '@/app/_components/my-experience/experience-section/ExperienceSection'
 
 interface Props {
@@ -9,8 +8,6 @@ interface Props {
 }
 
 export const MyExperience = ({ id = 'experience' }: Props) => {
-	const [showFirst, setShowFirst] = useState(false)
-	const [showSecond, setShowSecond] = useState(false)
 	const [showSection, setShowSection] = useState<
 		'first' | 'second' | 'third' | null
 	>(null)
