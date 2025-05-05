@@ -24,7 +24,6 @@ export const Contact = ({ id = 'contact' }: Props) => {
 
 		try {
 			setForm({ ...validate.value })
-			console.log(validate.value)
 			if (!validate.error) {
 				await sendMessage(validate.value)
 				setButtonSuccess(true)

@@ -1,7 +1,6 @@
 import styles from './my-courses.module.scss'
 import Image from 'next/image'
 import { useState } from 'react'
-import { bool } from 'prop-types'
 
 interface Props {
 	id: string
