@@ -3,6 +3,7 @@ import styles from './my-work.module.scss'
 import { Project } from '@/app/_components/my-work/_components/Project'
 import { SamModal } from '@/shared/ui-kit/sam-modal/SamModal'
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface Props {
 	id: string
@@ -23,6 +24,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 		preview: '',
 	})
 	const [showModal, setShowModal] = useState(false)
+	const [link, setLink] = useState('')
 
 	return (
 		<>
@@ -50,6 +52,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								technologies: 'Next.js, TypeScript, SCSS',
 								preview: '/my-work/angel-mobile.svg',
 							})
+							setLink('https://www.getangelmobile.com')
 							setShowModal(true)
 						}}
 					/>
@@ -68,6 +71,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								technologies: 'Next.js, TypeScript, SCSS, Node.js, MongoDB',
 								preview: '/my-work/sam-mel.png',
 							})
+							setLink('')
 							setShowModal(true)
 						}}
 					/>
@@ -86,6 +90,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								technologies: 'Next.js, TypeScript, SCSS',
 								preview: '/my-work/wedding-invitation.webp',
 							})
+							setLink('https://demo.d1zalkbjht5kmk.amplifyapp.com')
 							setShowModal(true)
 						}}
 					/>
@@ -128,11 +133,25 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 							</span>
 						</div>
 
-						<div className={styles['modal-content__data--preview']}>
+						<div
+							className={styles['modal-content__data--preview']}
+							onClick={() => {
+								if (link) {
+									window.open(link, '_blank')
+								}
+							}}
+						>
 							<img
 								src={data.preview}
 								alt="preview"
 								className={styles['modal-content__data--preview__img']}
+							/>
+							<Image
+								src={'/my-work/open_in_new.svg'}
+								alt={'open_in_new'}
+								width={24}
+								height={24}
+								className={styles['icon']}
 							/>
 						</div>
 					</div>
