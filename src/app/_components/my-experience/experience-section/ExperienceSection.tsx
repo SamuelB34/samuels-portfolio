@@ -1,5 +1,6 @@
 import styles from '../my-experience.module.scss'
 import Image from 'next/image'
+import { ReactNode } from 'react'
 
 export interface Experience {
 	id: string
@@ -7,24 +8,32 @@ export interface Experience {
 	role: string
 	date: string
 	logo: string
-	description: string
-	descriptionExtended?: string
+	type: string
+	description: ReactNode
+	onClick?: () => void
+	showSection?: 'first' | 'second' | 'third' | null
+	section: 'first' | 'second' | 'third'
 }
 
 export const ExperienceItem = ({
-	experience,
-	isOpen,
+	id,
+	company,
+	role,
+	date,
+	logo,
+	type,
+	description,
 	onClick,
-}: {
-	experience: Experience
-	isOpen: boolean
-	onClick: () => void
-}) => (
+	showSection,
+	section,
+}: Experience) => (
 	<div
-		className={`${styles['my-experience__section-1']} ${isOpen ? styles['open'] : ''}`}
+		className={`${styles[`my-experience__section-${type}`]} ${styles[`my-experience__section-${type}__` + (showSection !== null && showSection !== section)]}`}
 		onClick={onClick}
+		key={id}
 	>
 		<div className={styles['my-experience__section--content']}>
+			{/*Head*/}
 			<div className={styles['my-experience__section--content__head']}>
 				<div className={styles['my-experience__section--content__head--left']}>
 					<div
@@ -39,15 +48,16 @@ export const ExperienceItem = ({
 								]
 							}
 						>
-							<Image src={experience.logo} alt="logo" width={36} height={37} />
+							<Image src={logo} alt={'code'} width={36} height={37} />
 							<span
 								className={
 									styles['my-experience__section--content__head--left__company']
 								}
 							>
-								{experience.company}
+								{company}
 							</span>
 						</div>
+
 						<Image
 							src={'/my-experience/chevron.svg'}
 							alt={'chevron'}
@@ -60,12 +70,13 @@ export const ExperienceItem = ({
 							}
 						/>
 					</div>
+
 					<span
 						className={
 							styles['my-experience__section--content__head--left__position']
 						}
 					>
-						{experience.role}
+						{role}
 					</span>
 				</div>
 				<div className={styles['my-experience__section--content__head--right']}>
@@ -74,18 +85,19 @@ export const ExperienceItem = ({
 							styles['my-experience__section--content__head--left__date']
 						}
 					>
-						{experience.date}
+						{date}
 					</span>
 				</div>
 			</div>
 
+			{/*Description*/}
 			<p className={styles['my-experience__section--content__paragraph']}>
-				{experience.description}
+				{description}
 			</p>
 
-			{isOpen && experience.descriptionExtended && (
+			{showSection === section && (
 				<p className={styles['my-experience__section--content__p-2']}>
-					{experience.descriptionExtended}
+					{description}
 				</p>
 			)}
 		</div>
