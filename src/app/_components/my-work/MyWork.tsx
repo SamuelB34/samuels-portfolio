@@ -38,6 +38,27 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 
 				<div className={styles['my-work__projects-container']}>
 					<Project
+						title={'Smart-Storage'}
+						date={'January 2026'}
+						type={'Landing Page'}
+						image={'/my-work/smart-storage.png'}
+						checkMore={() => {
+							setData({
+								name: 'Smart Storage',
+								objective: `
+									A landing page for a storage facility company that showcases
+									services and unit sizes. Includes automated weekly visitor
+									reports sent via email and a contact form with email
+									notifications.`,
+								technologies:
+									'Next.js, TypeScript, SCSS, MongoDB, Resend, Cloudflare Workers',
+								preview: '/my-work/smart-storage.png',
+							})
+							setLink('https://smart-storage.mx/')
+							setShowModal(true)
+						}}
+					/>
+					<Project
 						title={'FESMEX Store'}
 						date={'January 2025'}
 						type={'E-commerce'}
