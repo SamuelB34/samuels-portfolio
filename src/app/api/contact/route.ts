@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const CONTACT_SERVER_URL = process.env.CONTACT_SERVER_URL
-const CONTACT_API_KEY = process.env.CONTACT_API_KEY
+const sanitize = (value?: string) =>
+	value?.replace(/[^\x20-\x7E]/g, '').trim()
+
+const CONTACT_SERVER_URL = sanitize(process.env.CONTACT_SERVER_URL)
+const CONTACT_API_KEY = sanitize(process.env.CONTACT_API_KEY)
 
 export async function POST(req: NextRequest) {
 	if (!CONTACT_SERVER_URL || !CONTACT_API_KEY) {
