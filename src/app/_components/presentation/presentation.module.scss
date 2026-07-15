@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .presentation {
 	z-index: 10;
@@ -13,11 +13,11 @@
 	animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 	height: 100svh;
 	width: 100%;
-	@include desktop {
+	@include mq.desktop {
 		height: calc(100vh - 32px);
 	}
 
-	@include tablet {
+	@include mq.tablet {
 		max-width: 248px;
 	}
 
@@ -28,14 +28,14 @@
 		padding-top: 48px;
 		gap: 24px;
 
-		@include desktop {
+		@include mq.desktop {
 			gap: 16px;
 		}
 
 		&--name {
 			color: #feb3bc;
 			text-align: center;
-			font-family: 'Ubuntu Monospace', monospace;
+			font-family: var(--font-ubuntu-mono), monospace;
 			font-size: 18px;
 			font-style: normal;
 			font-weight: 400;
@@ -46,17 +46,17 @@
 			color: #fff;
 			text-align: center;
 			font-family:
-				Open Sans,
+				var(--font-open-sans),
 				sans-serif;
 			font-style: normal;
 			font-weight: 700;
 
-			@include desktop {
+			@include mq.desktop {
 				line-height: 64px;
 				font-size: 48px;
 			}
 
-			@include tablet {
+			@include mq.tablet {
 				font-size: 24px;
 			}
 		}

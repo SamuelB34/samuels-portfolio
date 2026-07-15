@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .my-experience {
 	display: flex;
@@ -12,7 +12,7 @@
 	width: 100%;
 	height: 100svh;
 
-	@include desktop {
+	@include mq.desktop {
 		height: calc(100vh - 32px);
 		gap: 32px;
 		align-items: center;
@@ -27,7 +27,7 @@
 
 		&--title {
 			color: #feb3bc;
-			font-family: 'Ubuntu Monospace', monospace;
+			font-family: var(--font-ubuntu-mono), monospace;
 			font-size: 16px;
 			font-style: normal;
 			font-weight: 700;
@@ -38,13 +38,13 @@
 			color: #fff;
 			text-align: center;
 			font-family:
-				Open Sans,
+				var(--font-open-sans),
 				sans-serif;
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
 			font-size: 24px;
-			@include desktop {
+			@include mq.desktop {
 				font-size: 48px;
 			}
 		}
@@ -56,13 +56,13 @@
 			border-radius: 8px;
 
 			&__true {
-				@include mobile {
+				@include mq.mobile {
 					display: none;
 				}
 			}
 
 			&__false {
-				@include mobile {
+				@include mq.mobile {
 					display: block;
 				}
 			}
@@ -72,13 +72,13 @@
 			border-radius: 8px;
 
 			&__true {
-				@include mobile {
+				@include mq.mobile {
 					display: none;
 				}
 			}
 
 			&__false {
-				@include mobile {
+				@include mq.mobile {
 					display: block;
 				}
 			}
@@ -90,7 +90,7 @@
 			flex-direction: column;
 			gap: 24px;
 
-			@include desktop {
+			@include mq.desktop {
 				gap: 8px;
 			}
 
@@ -99,7 +99,7 @@
 				flex-direction: column;
 				gap: 4px;
 
-				@include desktop {
+				@include mq.desktop {
 					flex-direction: row;
 					justify-content: space-between;
 					align-items: center;
@@ -109,36 +109,36 @@
 					flex-direction: column;
 					gap: 4px;
 
-					@include desktop {
+					@include mq.desktop {
 						flex-direction: row;
 						align-items: center;
 					}
 
 					&__top {
-						@include mobile {
+						@include mq.mobile {
 							display: flex;
 							justify-content: space-between;
 						}
-						@include tablet {
+						@include mq.tablet {
 							display: flex;
 							justify-content: space-between;
 						}
 						&--chevron {
 							display: block;
-							@include desktop {
+							@include mq.desktop {
 								display: none;
 							}
 						}
 					}
 
 					&__company {
-						@include desktop {
+						@include mq.desktop {
 							padding-left: 8px;
 							padding-right: 16px;
 						}
 						color: #fff;
 						font-family:
-							Open Sans,
+							var(--font-open-sans),
 							sans-serif;
 						font-size: 18px;
 						font-style: normal;
@@ -149,17 +149,17 @@
 							display: flex;
 							align-items: center;
 							gap: 8px;
-							@include desktop {
+							@include mq.desktop {
 								gap: 16px;
 							}
 						}
 					}
 
 					&__date {
-						@include desktop {
+						@include mq.desktop {
 							color: #fff;
 							font-family:
-								Open Sans,
+								var(--font-open-sans),
 								sans-serif;
 							font-size: 18px;
 							font-style: normal;
@@ -168,7 +168,7 @@
 						}
 						color: #fff;
 						font-family:
-							Open Sans,
+							var(--font-open-sans),
 							sans-serif;
 						font-size: 14px;
 						font-style: normal;
@@ -179,7 +179,7 @@
 					&__position {
 						color: #fff;
 						font-family:
-							Open Sans,
+							var(--font-open-sans),
 							sans-serif;
 						font-size: 14px;
 						font-style: normal;
@@ -192,7 +192,7 @@
 			&__p-2 {
 				color: #fff;
 				font-family:
-					Open Sans,
+					var(--font-open-sans),
 					sans-serif;
 				font-size: 16px;
 				font-style: normal;
@@ -202,14 +202,14 @@
 				max-height: 200px;
 				overflow: scroll;
 
-				@include desktop {
+				@include mq.desktop {
 					display: none;
 				}
 
 				b {
 					color: #fff;
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 16px;
 					font-style: normal;
@@ -221,7 +221,7 @@
 			&__paragraph {
 				color: #fff;
 				font-family:
-					Open Sans,
+					var(--font-open-sans),
 					sans-serif;
 				font-size: 16px;
 				font-style: normal;
@@ -230,14 +230,14 @@
 				text-align: left;
 				display: none;
 
-				@include desktop {
+				@include mq.desktop {
 					display: block;
 				}
 
 				b {
 					color: #fff;
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 16px;
 					font-style: normal;
@@ -250,13 +250,13 @@
 }
 
 .is-expanded {
-	@include mobile {
+	@include mq.mobile {
 		display: block;
 	}
 }
 
 .is-collapsed {
-	@include mobile {
+	@include mq.mobile {
 		display: none;
 	}
 }

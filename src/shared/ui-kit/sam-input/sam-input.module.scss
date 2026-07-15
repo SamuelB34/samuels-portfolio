@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_variables';
+@use '../../scss/_variables' as v;
 
 .body {
 	display: flex;
@@ -21,7 +21,7 @@
 			border-right: 0;
 			color: var(--neutral-600);
 			text-overflow: ellipsis;
-			font-family: 'Open Sans', sans-serif;
+			font-family: var(--font-open-sans), sans-serif;
 			font-size: 16px;
 			font-style: normal;
 			font-weight: 700;
@@ -39,7 +39,7 @@
 	color: #e0e0e0;
 	text-overflow: ellipsis;
 	whitespace: nowrap;
-	font-family: 'Open Sans', sans-serif;
+	font-family: var(--font-open-sans), sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -47,7 +47,7 @@
 	padding: 12px 20px;
 
 	&:hover {
-		border: 1px solid $--primary;
+		border: 1px solid v.$primary;
 		transition: border-color 300ms;
 	}
 
@@ -55,8 +55,8 @@
 		outline: none;
 		border-width: 2px;
 		border-style: solid;
-		border-color: $--primary;
-		box-shadow: 0 4px 6px 0 $--primary;
+		border-color: v.$primary;
+		box-shadow: 0 4px 6px 0 v.$primary;
 	}
 
 	&:read-only {
@@ -68,7 +68,7 @@
 }
 
 .input__error-msg {
-	font-family: 'Open Sans', sans-serif;
+	font-family: var(--font-open-sans), sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;

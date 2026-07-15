@@ -1,6 +1,6 @@
 'use client'
 import stylesInput from './sam-input.module.scss'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent } from 'react'
 interface Props {
 	name: string
 	id?: string
@@ -28,9 +28,6 @@ interface Props {
 	onChange?: (text: string) => void
 	onBlur?: () => void
 	onFocus?: () => void
-	selectType?: { value: string; label: string }[]
-	defaultValueType?: string
-	onChangeType?: (text: string) => void
 }
 
 export const SamInput = ({
@@ -52,30 +49,15 @@ export const SamInput = ({
 	min,
 	max,
 }: Props) => {
-	// Class
-	const [inputClass, setInputClass] = useState('input')
-	const [errorMsg, setErrorMsg] = useState(<></>)
-	// Styles
+	let inputClass = stylesInput['input']
+	if (input_mode === 'tel') inputClass += ' ' + stylesInput['tel']
+	if (disabled) inputClass += ' ' + stylesInput['disabled']
+	if (error) inputClass += ' ' + stylesInput['error']
+
 	const styles = {
 		textAlign: text_align,
 	}
 
-	useEffect(() => {
-		let stylesString = stylesInput['input']
-		if (input_mode === 'tel') stylesString += ' ' + stylesInput['tel']
-		if (disabled) stylesString += ' ' + stylesInput['disabled']
-		if (error) {
-			stylesString += ' ' + stylesInput['error']
-			setErrorMsg(
-				<span className={stylesInput['input__error-msg']}> {error_msg} </span>,
-			)
-		} else {
-			setErrorMsg(<></>)
-		}
-		setInputClass(stylesString)
-	}, [error, input_mode, disabled, error_msg])
-
-	// Functions
 	const onInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
 		const { value } = target
 		if (onChange) onChange(value)
@@ -108,7 +90,9 @@ export const SamInput = ({
 					maxLength={maxLength}
 				/>
 			</div>
-			{errorMsg}
+			{error && (
+				<span className={stylesInput['input__error-msg']}> {error_msg} </span>
+			)}
 		</div>
 	)
 }

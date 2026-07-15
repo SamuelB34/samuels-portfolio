@@ -1,3 +1,4 @@
+'use client'
 import styles from './my-courses.module.scss'
 import Image from 'next/image'
 import { useState } from 'react'

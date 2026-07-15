@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .my-courses {
 	display: flex;
@@ -11,11 +11,11 @@
 	gap: 32px;
 	height: 100svh;
 	width: 100%;
-	@include desktop {
+	@include mq.desktop {
 		height: calc(100vh - 32px);
 		gap: 64px;
 	}
-	@include mobile {
+	@include mq.mobile {
 		gap: 16px;
 	}
 
@@ -27,7 +27,7 @@
 		&--title {
 			color: #feb3bc;
 			text-align: center;
-			font-family: 'Ubuntu Monospace', monospace;
+			font-family: var(--font-ubuntu-mono), monospace;
 			font-size: 18px;
 			font-style: normal;
 			font-weight: 700;
@@ -38,13 +38,13 @@
 			color: #fff;
 			text-align: center;
 			font-family:
-				Open Sans,
+				var(--font-open-sans),
 				sans-serif;
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
 			font-size: 24px;
-			@include desktop {
+			@include mq.desktop {
 				font-size: 48px;
 			}
 		}
@@ -56,7 +56,7 @@
 		gap: 32px;
 		max-width: 1250px;
 
-		@include mobile {
+		@include mq.mobile {
 			gap: 16px;
 		}
 
@@ -64,11 +64,11 @@
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
-			@include mobile {
+			@include mq.mobile {
 				gap: 8px;
 			}
 
-			@include desktop {
+			@include mq.desktop {
 				display: grid;
 				grid-template-columns: 295px 55px 1fr;
 				column-gap: 22px;
@@ -77,7 +77,7 @@
 			&:not(:last-child) {
 				.my-courses__content--row__center {
 					display: none;
-					@include desktop {
+					@include mq.desktop {
 						display: block;
 					}
 					position: relative;
@@ -99,12 +99,12 @@
 				align-items: center;
 				gap: 16px;
 
-				@include mobile {
+				@include mq.mobile {
 					cursor: pointer;
 				}
 
 				&--dot {
-					@include desktop {
+					@include mq.desktop {
 						display: none;
 					}
 					width: 16px;
@@ -114,16 +114,16 @@
 					min-width: 16px;
 				}
 
-				@include desktop {
+				@include mq.desktop {
 					justify-content: flex-end;
 				}
 				span {
 					color: #fff;
-					@include desktop {
+					@include mq.desktop {
 						text-align: right;
 					}
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 18px;
 					font-style: normal;
@@ -134,7 +134,7 @@
 
 			&__center {
 				display: none;
-				@include desktop {
+				@include mq.desktop {
 					display: flex;
 				}
 				justify-content: center;
@@ -161,15 +161,15 @@
 			&__right {
 				span {
 					color: rgba(255, 255, 255, 0.5);
-					@include desktop {
+					@include mq.desktop {
 						color: #fff;
 					}
 
-					@include mobile {
+					@include mq.mobile {
 						display: none;
 					}
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 18px;
 					font-style: normal;
@@ -178,11 +178,11 @@
 
 					b {
 						color: rgba(255, 255, 255, 0.5);
-						@include desktop {
+						@include mq.desktop {
 							color: #fff;
 						}
 						font-family:
-							Open Sans,
+							var(--font-open-sans),
 							sans-serif;
 						font-size: 18px;
 						font-style: normal;
@@ -193,11 +193,11 @@
 
 				p {
 					color: rgba(255, 255, 255, 0.5);
-					@include desktop {
+					@include mq.desktop {
 						color: #fff;
 					}
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 14px;
 					font-style: normal;
@@ -206,11 +206,11 @@
 
 					b {
 						color: rgba(255, 255, 255, 0.5);
-						@include desktop {
+						@include mq.desktop {
 							color: #fff;
 						}
 						font-family:
-							Open Sans,
+							var(--font-open-sans),
 							sans-serif;
 						font-size: 14px;
 						font-style: normal;
@@ -220,7 +220,7 @@
 				}
 				&--chevron {
 					display: none;
-					@include mobile {
+					@include mq.mobile {
 						display: block;
 					}
 				}
@@ -240,7 +240,7 @@
 			align-items: center;
 			gap: 64px;
 
-			@include mobile {
+			@include mq.mobile {
 				flex-direction: column;
 				gap: 8px;
 				padding: 16px;
@@ -254,21 +254,21 @@
 				&--white {
 					color: #fff;
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 24px;
 					font-style: normal;
 					font-weight: 700;
 					line-height: normal;
 
-					@include mobile {
+					@include mq.mobile {
 						font-size: 18px;
 					}
 				}
 				&--gray {
 					color: rgba(255, 255, 255, 0.5);
 					font-family:
-						Open Sans,
+						var(--font-open-sans),
 						sans-serif;
 					font-size: 18px;
 					font-style: normal;
@@ -279,7 +279,7 @@
 
 			&__green {
 				color: #5cf6bf;
-				font-family: 'Ubuntu Monospace', monospace;
+				font-family: var(--font-ubuntu-mono), monospace;
 				font-size: 18px;
 				font-style: normal;
 				font-weight: 400;
@@ -298,7 +298,7 @@
 				justify-content: center;
 				height: 100%;
 
-				@include mobile {
+				@include mq.mobile {
 					width: 100%;
 				}
 
@@ -306,7 +306,7 @@
 					height: 73px;
 					width: 2px;
 					background-color: rgba(255, 255, 255, 0.3);
-					@include mobile {
+					@include mq.mobile {
 						height: 2px;
 						width: 100%;
 					}

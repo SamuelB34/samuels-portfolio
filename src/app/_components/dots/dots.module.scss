@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .dots {
 	display: flex;
@@ -8,7 +8,7 @@
 	position: fixed;
 	bottom: 48px;
 
-	@include mobile {
+	@include mq.mobile {
 		bottom: 24px;
 	}
 	-webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)

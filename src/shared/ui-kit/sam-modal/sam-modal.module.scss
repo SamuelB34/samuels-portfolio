@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../scss/_media-queries' as mq;
 
 .modal {
 	animation: blur-animation 0.3s ease-in;
@@ -26,7 +26,7 @@
 		-moz-box-shadow: 10px 10px 41px 0 rgb(42 42 42);
 		width: 100%;
 
-		@include mobile {
+		@include mq.mobile {
 			width: 90%;
 		}
 

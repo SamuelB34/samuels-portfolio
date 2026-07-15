@@ -1,5 +1,5 @@
+'use client'
 import styles from './side-menu.module.scss'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
 import { scrollToElement } from '@/shared/functions/scrollTo'
@@ -9,26 +9,15 @@ interface Props {
 	backAction: () => void
 }
 export const SideMenu = ({ opened, backAction }: Props) => {
-	const [sideMenuClass, setSideMenuClass] = useState<
-		'side-menu' | 'side-menu-active'
-	>('side-menu')
-
-	const [menuClass, setMenuClass] = useState(styles['header__pages--section'])
-	const [menuBottomClass, setMenuBottomClass] = useState(styles[''])
-
-	useEffect(() => {
-		setSideMenuClass(opened ? 'side-menu-active' : 'side-menu')
-		setMenuClass(
-			opened
-				? styles['header__pages--section'] +
-						' ' +
-						styles['header__pages--section__animation']
-				: styles['header__pages--section'],
-		)
-		setMenuBottomClass(
-			opened ? styles['content__bottom'] : styles['content__bottom-inactive'],
-		)
-	}, [opened])
+	const sideMenuClass = opened ? 'side-menu-active' : 'side-menu'
+	const menuClass = opened
+		? styles['header__pages--section'] +
+			' ' +
+			styles['header__pages--section__animation']
+		: styles['header__pages--section']
+	const menuBottomClass = opened
+		? styles['content__bottom']
+		: styles['content__bottom-inactive']
 
 	return (
 		<div className={styles[sideMenuClass]}>

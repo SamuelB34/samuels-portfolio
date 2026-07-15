@@ -1,9 +1,9 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .side-menu {
 	display: none;
 
-	@include mobile {
+	@include mq.mobile {
 		position: fixed;
 		left: -100%;
 		top: 0;
@@ -45,7 +45,7 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		font-family: Inter, sans-serif;
+		font-family: var(--font-inter), sans-serif;
 		font-size: 20px;
 		cursor: pointer;
 
@@ -94,7 +94,7 @@
 	padding-left: 16px;
 
 	&--section {
-		font-family: Inter, sans-serif;
+		font-family: var(--font-inter), sans-serif;
 		font-size: 32px;
 
 		&__animation {

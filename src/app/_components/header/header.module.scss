@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .header {
 	display: flex;
@@ -10,24 +10,24 @@
 	z-index: 12;
 	background: none;
 
-	@include mobile {
+	@include mq.mobile {
 		padding: 18px;
 	}
 
 	&__hamburger {
 		display: block;
-		@include desktop {
+		@include mq.desktop {
 			display: none;
 		}
 	}
 
 	&__home {
 		cursor: pointer;
-		@include tablet {
+		@include mq.tablet {
 			-webkit-animation: jello-horizontal 5s infinite ease-in-out;
 			animation: jello-horizontal 5s infinite ease-in-out;
 		}
-		@include mobile {
+		@include mq.mobile {
 			-webkit-animation: jello-horizontal 5s infinite ease-in-out;
 			animation: jello-horizontal 5s infinite ease-in-out;
 		}
@@ -40,7 +40,7 @@
 
 	&__pages {
 		display: none;
-		@include desktop {
+		@include mq.desktop {
 			display: flex;
 			align-items: center;
 			gap: 32px;
@@ -48,7 +48,7 @@
 			&--section {
 				color: #fff;
 				font-family:
-					Open Sans,
+					var(--font-open-sans),
 					sans-serif;
 				font-size: 18px;
 				font-style: normal;

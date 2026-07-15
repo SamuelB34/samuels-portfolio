@@ -1,3 +1,4 @@
+'use client'
 import styles from './header.module.scss'
 import Image from 'next/image'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'

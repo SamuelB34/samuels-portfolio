@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../shared/scss/_media-queries' as mq;
 
 .main {
 	display: flex;
@@ -11,7 +11,7 @@
 	overflow-x: hidden;
 	overflow-y: scroll;
 
-	@include tablet {
+	@include mq.tablet {
 		gap: 64px;
 	}
 }
@@ -82,7 +82,7 @@
 		overflow: hidden;
 		transform: scaleX(-1);
 
-		@include mobile {
+		@include mq.mobile {
 			display: none;
 		}
 

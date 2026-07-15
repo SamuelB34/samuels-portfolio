@@ -1,4 +1,4 @@
-@import 'src/shared/scss/_media-queries';
+@use '../../../shared/scss/_media-queries' as mq;
 
 .about-me {
 	display: flex;
@@ -12,7 +12,7 @@
 	height: 100svh;
 	width: 100%;
 
-	@include desktop {
+	@include mq.desktop {
 		height: calc(100vh - 32px);
 	}
 
@@ -24,7 +24,7 @@
 
 		&--title {
 			color: #f6c15c;
-			font-family: 'Ubuntu Monospace', monospace;
+			font-family: var(--font-ubuntu-mono), monospace;
 			font-size: 16px;
 			font-style: normal;
 			font-weight: 700;
@@ -34,13 +34,13 @@
 		&--frontend {
 			color: #fff;
 			font-family:
-				Open Sans,
+				var(--font-open-sans),
 				sans-serif;
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
 			font-size: 24px;
-			@include desktop {
+			@include mq.desktop {
 				font-size: 48px;
 			}
 		}
@@ -48,7 +48,7 @@
 		&--description {
 			color: #fff;
 			font-family:
-				Open Sans,
+				var(--font-open-sans),
 				sans-serif;
 			font-size: 16px;
 			font-style: normal;
@@ -76,12 +76,12 @@
 				width: 60px;
 				height: 50px;
 
-				@include desktop {
+				@include mq.desktop {
 					width: 68px;
 					height: 80px;
 				}
 
-				@include mobile {
+				@include mq.mobile {
 					width: 32px;
 					height: 28px;
 				}

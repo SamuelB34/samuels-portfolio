@@ -2,19 +2,13 @@
 import Image from 'next/image'
 import styles from './presentation.module.scss'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
+import { scrollToElement } from '@/shared/functions/scrollTo'
 
 interface Props {
 	id: string
 }
 
 export const Presentation = ({ id = 'presentation' }: Props) => {
-	const scrollToElement = (view: string) => {
-		const element = document.getElementById(view)
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' })
-		}
-	}
-
 	return (
 		<div className={styles['presentation']} id={id}>
 			<Image

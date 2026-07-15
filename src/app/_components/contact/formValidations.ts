@@ -14,8 +14,13 @@ export interface FormInterface {
 }
 
 export const validateForm = (form: FormInterface) => {
-	let form_copy = form
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+	const form_copy: FormInterface = {
+		full_name: { ...form.full_name },
+		email_address: { ...form.email_address },
+		message: { ...form.message },
+	}
 
 	form_copy['full_name'].error = form_copy['full_name'].value.length === 0
 	form_copy['email_address'].error = !emailRegex.test(
