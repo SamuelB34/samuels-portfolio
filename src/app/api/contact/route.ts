@@ -59,7 +59,8 @@ export async function POST(req: NextRequest) {
 		}
 
 		return NextResponse.json(data, { status: 200 })
-	} catch {
+	} catch (error) {
+		console.error('[contact proxy] Fetch to contact-server failed:', error)
 		return NextResponse.json(
 			{ error: 'Failed to process contact request' },
 			{ status: 500 },
