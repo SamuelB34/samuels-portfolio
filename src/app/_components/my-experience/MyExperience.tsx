@@ -40,17 +40,18 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 					}}
 					description={
 						<>
-							Present As a <b>Senior Full Stack Developer</b>, I Engineered
-							end-to-end features within a healthcare platform operating under a
-							complex monorepo architecture, contributing across front-end,
-							back-end, and mobile layers. Built real-time dashboards for data
-							visualization, optimized front-end performance to minimize data
-							usage, and restructured MySQL database schemas to enhance query
-							efficiency. Integrated WebSocket-based real-time data sync and
-							designed UI components using Figma. Leveraged a fullstack tech
-							stack including Next.js, React Native, MySQL, and MongoDB to
-							deliver scalable, performant solutions aligned with healthcare
-							standards.
+							Present As a <b>Senior Full Stack Developer</b>, I engineered
+							end-to-end features for a healthcare platform across front-end,
+							back-end, and mobile layers. Built real-time dashboards,
+							optimized front-end performance, and restructured MySQL and
+							PostgreSQL schemas. Developed enterprise frontend experiences
+							with Next.js, React, TypeScript, Tailwind CSS, and Radix UI,
+							including reusable design systems from Figma designs documented
+							in Storybook. Integrated LLM-powered workflows and AI-powered
+							development agents to streamline engineering processes.
+							Contributed to a responsive hybrid application for desktop and
+							mobile using Next.js, React Native, PostgreSQL, MySQL, and
+							MongoDB.
 						</>
 					}
 				/>
