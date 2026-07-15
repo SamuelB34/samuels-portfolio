@@ -38,21 +38,21 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 
 				<div className={styles['my-work__projects-container']}>
 					<Project
-						title={'Angel Mobile'}
-						date={'August 2023'}
-						type={'Website'}
-						image={'/my-work/angel-mobile.webp'}
+						title={'FESMEX Store'}
+						date={'2026'}
+						type={'E-commerce'}
+						image={'/my-work/fesmex.png'}
 						checkMore={() => {
 							setData({
-								name: 'Angel Mobile Landing Page',
+								name: 'FESMEX Store',
 								objective: `
-									A recently developed landing page is the result of a
-									collaborative effort within the company I am employed with,
-									specifically designed for a fresh client engagement.`,
-								technologies: 'Next.js, TypeScript, SCSS',
-								preview: '/my-work/angel-mobile.svg',
+									Online store for FESMEX products, providing a seamless
+									shopping experience with product browsing and secure
+									checkout.`,
+								technologies: 'Next.js, TypeScript, SCSS, MongoDB, Workers, Stripe',
+								preview: '/my-work/fesmex.png',
 							})
-							setLink('https://www.getangelmobile.com')
+							setLink('https://store.fesmex.com.mx/productos')
 							setShowModal(true)
 						}}
 					/>
