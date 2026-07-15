@@ -53,7 +53,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 									'Next.js, TypeScript, SCSS, MongoDB, Workers, Stripe',
 								preview: '/my-work/fesmex.png',
 							})
-							setLink('https://store.fesmex.com.mx/productos')
+							setLink('https://store.fesmex.com.mx/')
 							setShowModal(true)
 						}}
 					/>
