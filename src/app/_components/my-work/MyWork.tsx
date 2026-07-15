@@ -90,7 +90,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								technologies: 'Next.js, TypeScript, SCSS',
 								preview: '/my-work/wedding-invitation.webp',
 							})
-							setLink('https://demo.d1zalkbjht5kmk.amplifyapp.com')
+							setLink('https://wedding-invitation-production-7c8c.up.railway.app')
 							setShowModal(true)
 						}}
 					/>
