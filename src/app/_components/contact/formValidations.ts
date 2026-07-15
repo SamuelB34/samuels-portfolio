@@ -7,6 +7,10 @@ export interface FormInterface {
 		value: string
 		error: boolean
 	}
+	phone: {
+		value: string
+		error: boolean
+	}
 	message: {
 		value: string
 		error: boolean
@@ -19,6 +23,7 @@ export const validateForm = (form: FormInterface) => {
 	const form_copy: FormInterface = {
 		full_name: { ...form.full_name },
 		email_address: { ...form.email_address },
+		phone: { ...form.phone },
 		message: { ...form.message },
 	}
 
@@ -44,6 +49,10 @@ export const formatForm = () => {
 			error: false,
 		},
 		email_address: {
+			value: '',
+			error: false,
+		},
+		phone: {
 			value: '',
 			error: false,
 		},

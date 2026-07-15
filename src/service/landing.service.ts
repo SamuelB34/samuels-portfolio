@@ -2,17 +2,16 @@ import axios from 'axios'
 import { FormInterface } from '@/app/_components/contact/formValidations'
 
 const serverApi = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+	baseURL: '/',
 })
+
 export const sendMessage = async (form: FormInterface) => {
 	const body = {
-		full_name: form['full_name'].value,
-		email_address: form['email_address'].value,
+		name: form['full_name'].value,
+		email: form['email_address'].value,
+		phone: form['phone'].value,
 		message: form['message'].value,
 	}
-	const response = await serverApi.post(
-		`/messages/${process.env.NEXT_PUBLIC_USER_ID}`,
-		body,
-	)
+	const response = await serverApi.post('/api/contact', body)
 	return response.data
 }

@@ -3,6 +3,7 @@ import styles from './contact.module.scss'
 import { SamInput } from '@/shared/ui-kit/sam-input/SamInput'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
 import { useState } from 'react'
+import axios from 'axios'
 import {
 	formatForm,
 	validateForm,
@@ -27,16 +28,27 @@ export const Contact = ({ id = 'contact' }: Props) => {
 			if (!validate.error) {
 				await sendMessage(validate.value)
 				setButtonSuccess(true)
-			}
-		} catch (e) {
-			console.log(e)
-		} finally {
-			if (!validate.error) {
 				setForm(formatForm())
 				setTimeout(() => {
 					setButtonSuccess(false)
 				}, 2000)
 			}
+		} catch (e) {
+			if (axios.isAxiosError(e)) {
+				const status = e.response?.status
+				const errorMsg = e.response?.data?.error
+
+				if (status === 400 && errorMsg) {
+					console.error('Validation error:', errorMsg)
+				} else if (status === 429) {
+					console.error('Rate limit exceeded. Please try again later.')
+				} else {
+					console.error('Failed to send message. Please try again later.')
+				}
+			} else {
+				console.error('Unexpected error:', e)
+			}
+		} finally {
 			setButtonLoading(false)
 		}
 	}
@@ -94,7 +106,27 @@ export const Contact = ({ id = 'contact' }: Props) => {
 					/>
 				</div>
 				<div className={styles['contact__right--input-container']}>
-					<label>Message</label>
+					<label>Phone (optional)</label>
+				<SamInput
+					name={'phone'}
+					input_mode={'tel'}
+					placeholder={'+52 555 123 4567'}
+					value={form['phone'].value}
+					error={form['phone'].error}
+					error_msg={'Invalid phone number'}
+					onChange={(text) => {
+						setForm({
+							...form,
+							phone: {
+								error: false,
+								value: text,
+							},
+						})
+					}}
+				/>
+			</div>
+			<div className={styles['contact__right--input-container']}>
+				<label>Message</label>
 					<SamInput
 						name={'message'}
 						placeholder={'Anything you want to say, can be written here.'}
