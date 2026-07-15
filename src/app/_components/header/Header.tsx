@@ -3,6 +3,7 @@ import styles from './header.module.scss'
 import Image from 'next/image'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
 import { scrollToElement } from '@/shared/functions/scrollTo'
+import { LogoAnimation } from '@/shared/ui-kit/logo-animation/LogoAnimation'
 
 interface Props {
 	menuAction: () => void
@@ -23,16 +24,7 @@ export const Header = ({ menuAction }: Props) => {
 					}}
 				/>
 
-				<Image
-					src={'/header/logo.svg'}
-					alt={'logo'}
-					width={66}
-					height={61}
-					className={styles['header__home']}
-					onClick={() => {
-						scrollToElement('presentation')
-					}}
-				/>
+				<LogoAnimation />
 
 				<div className={styles['header__pages']}>
 					<span

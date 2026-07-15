@@ -39,7 +39,7 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 				<div className={styles['my-work__projects-container']}>
 					<Project
 						title={'FESMEX Store'}
-						date={'2026'}
+						date={'January 2025'}
 						type={'E-commerce'}
 						image={'/my-work/fesmex.png'}
 						checkMore={() => {
@@ -49,7 +49,8 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 									Online store for FESMEX products, providing a seamless
 									shopping experience with product browsing and secure
 									checkout.`,
-								technologies: 'Next.js, TypeScript, SCSS, MongoDB, Workers, Stripe',
+								technologies:
+									'Next.js, TypeScript, SCSS, MongoDB, Workers, Stripe',
 								preview: '/my-work/fesmex.png',
 							})
 							setLink('https://store.fesmex.com.mx/productos')
@@ -90,7 +91,9 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								technologies: 'Next.js, TypeScript, SCSS',
 								preview: '/my-work/wedding-invitation.webp',
 							})
-							setLink('https://wedding-invitation-production-7c8c.up.railway.app')
+							setLink(
+								'https://wedding-invitation-production-7c8c.up.railway.app',
+							)
 							setShowModal(true)
 						}}
 					/>

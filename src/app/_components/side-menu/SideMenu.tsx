@@ -3,6 +3,7 @@ import styles from './side-menu.module.scss'
 import Image from 'next/image'
 import { SamButton } from '@/shared/ui-kit/sam-button/SamButton'
 import { scrollToElement } from '@/shared/functions/scrollTo'
+import { LogoAnimation } from '@/shared/ui-kit/logo-animation/LogoAnimation'
 
 interface Props {
 	opened: boolean
@@ -98,17 +99,7 @@ export const SideMenu = ({ opened, backAction }: Props) => {
 							height="23"
 						/>
 					</a>
-					<Image
-						src={'/header/logo.svg'}
-						alt={'logo'}
-						className={styles['content__bottom--logo']}
-						width="66"
-						height="61"
-						onClick={() => {
-							scrollToElement('presentation')
-							backAction()
-						}}
-					/>
+					<LogoAnimation />
 					<a href="tel:+526865782380">
 						<Image
 							src={'/header/phone.svg'}
