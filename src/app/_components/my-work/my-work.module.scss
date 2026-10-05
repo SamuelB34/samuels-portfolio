@@ -67,7 +67,10 @@
 		}
 
 		@include mq.mobile {
-			height: 175px;
+			height: 350px;
+			width: calc(100% - 32px);
+			flex: 0 0 calc(100% - 32px);
+			scroll-snap-align: center;
 		}
 		&--container {
 			position: relative;
@@ -110,13 +113,53 @@
 		}
 	}
 
+	&__carousel-wrapper {
+		position: relative;
+		width: 100%;
+		max-width: 1260px;
+	}
+
+	&__scroll-hint {
+		color: #fff;
+		font-family:
+			var(--font-open-sans),
+			sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		text-align: center;
+		padding: 16px;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: none;
+
+		@include mq.mobile {
+			display: block;
+		}
+	}
+
 	&__projects-container {
 		display: flex;
 		gap: 32px;
 
 		@include mq.mobile {
-			flex-direction: column;
+			flex-direction: row;
 			width: 100%;
+			box-sizing: border-box;
+			padding: 0 16px 12px;
+			overflow-x: auto;
+			overflow-y: hidden;
+			scroll-snap-type: x mandatory;
+			scroll-padding: 16px;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 	}
 }
@@ -159,9 +202,8 @@
 			cursor: pointer;
 
 			&__img {
-				width: 100%;
-				height: auto;
 				opacity: 0.6;
+				object-fit: contain;
 			}
 
 			.icon {

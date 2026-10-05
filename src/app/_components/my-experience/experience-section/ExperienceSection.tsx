@@ -28,7 +28,7 @@ export const ExperienceItem = ({
 	section,
 }: Experience) => (
 	<div
-		className={`${styles[`my-experience__section-${type}`]} ${styles[`my-experience__section-${type}__` + (showSection !== null && showSection !== section)]}`}
+		className={styles[`my-experience__section-${type}`]}
 		onClick={onClick}
 		key={id}
 	>
@@ -90,16 +90,18 @@ export const ExperienceItem = ({
 				</div>
 			</div>
 
-			{/*Description*/}
-			<p className={styles['my-experience__section--content__paragraph']}>
+			{showSection === section && (
+				<>
+					{/*Description*/}
+					<p className={styles['my-experience__section--content__paragraph']}>
+						{description}
+					</p>
+				</>
+			)}
+
+			<p className={styles['my-experience__section--content__p-2']}>
 				{description}
 			</p>
-
-			{showSection === section && (
-				<p className={styles['my-experience__section--content__p-2']}>
-					{description}
-				</p>
-			)}
 		</div>
 	</div>
 )

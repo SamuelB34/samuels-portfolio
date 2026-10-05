@@ -2,7 +2,7 @@
 import styles from './my-work.module.scss'
 import { Project } from '@/app/_components/my-work/_components/Project'
 import { SamModal } from '@/shared/ui-kit/sam-modal/SamModal'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 interface Props {
@@ -25,6 +25,8 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 	})
 	const [showModal, setShowModal] = useState(false)
 	const [link, setLink] = useState('')
+	const [hasScrolled, setHasScrolled] = useState(false)
+	const projectsRef = useRef<HTMLDivElement>(null)
 
 	return (
 		<>
@@ -36,7 +38,16 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 					</span>
 				</div>
 
-				<div className={styles['my-work__projects-container']}>
+				<div className={styles['my-work__carousel-wrapper']}>
+					<div
+						className={styles['my-work__projects-container']}
+						ref={projectsRef}
+						onScroll={() => {
+							if (projectsRef.current && projectsRef.current.scrollLeft > 0) {
+								setHasScrolled(true)
+							}
+						}}
+					>
 					<Project
 						title={'Smart-Storage'}
 						date={'January 2026'}
@@ -118,6 +129,12 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 							setShowModal(true)
 						}}
 					/>
+					</div>
+					{!hasScrolled && (
+						<span className={styles['my-work__scroll-hint']}>
+							Swipe right to see more →
+						</span>
+					)}
 				</div>
 			</div>
 
@@ -165,11 +182,15 @@ export const MyWork = ({ id = 'pieces' }: Props) => {
 								}
 							}}
 						>
-							<img
-								src={data.preview}
-								alt="preview"
-								className={styles['modal-content__data--preview__img']}
-							/>
+							{data.preview && (
+								<Image
+									src={data.preview}
+									alt="preview"
+									fill
+									className={styles['modal-content__data--preview__img']}
+									sizes="(max-width: 640px) 90vw, 500px"
+								/>
+							)}
 							<Image
 								src={'/my-work/open_in_new.svg'}
 								alt={'open_in_new'}
