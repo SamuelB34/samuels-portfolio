@@ -11,8 +11,8 @@ export interface Experience {
 	type: string
 	description: ReactNode
 	onClick?: () => void
-	showSection?: 'first' | 'second' | 'third' | null
-	section: 'first' | 'second' | 'third'
+	showSection?: 'first' | 'second' | 'third' | 'fourth' | null
+	section: 'first' | 'second' | 'third' | 'fourth'
 }
 
 export const ExperienceItem = ({

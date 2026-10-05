@@ -9,7 +9,7 @@ interface Props {
 
 export const MyExperience = ({ id = 'experience' }: Props) => {
 	const [showSection, setShowSection] = useState<
-		'first' | 'second' | 'third' | null
+		'first' | 'second' | 'third' | 'fourth' | null
 	>(null)
 
 	return (
@@ -34,24 +34,59 @@ export const MyExperience = ({ id = 'experience' }: Props) => {
 					logo={'/my-experience/code.svg'}
 					company={'Kirana Labs'}
 					role={'Senior Full Stack Developer'}
-					date={'March 2025 - Present'}
+					date={'March 2025 - September 2026'}
 					onClick={() => {
 						setShowSection(showSection !== 'first' ? 'first' : null)
 					}}
 					description={
 						<>
-							Present As a <b>Senior Full Stack Developer</b>, I engineered
-							end-to-end features for a healthcare platform across front-end,
-							back-end, and mobile layers. Built real-time dashboards,
-							optimized front-end performance, and restructured MySQL and
-							PostgreSQL schemas. Developed enterprise frontend experiences
-							with Next.js, React, TypeScript, Tailwind CSS, and Radix UI,
-							including reusable design systems from Figma designs documented
-							in Storybook. Integrated LLM-powered workflows and AI-powered
-							development agents to streamline engineering processes.
-							Contributed to a responsive hybrid application for desktop and
-							mobile using Next.js, React Native, PostgreSQL, MySQL, and
-							MongoDB.
+							As a Senior Full-Stack Developer at Kirana Labs, I worked across a
+							multi-role enterprise SaaS platform for government contracting,
+							contributing end to end across frontend, backend, data, integrations,
+							AI-powered workflows, and product UX with Next.js, React, TypeScript,
+							Node.js, PostgreSQL, and GraphQL. I built production-facing LLM and
+							agentic workflows for research, personalization, automation, and
+							decision support, including Bid Match, a recommendation system
+							combining deterministic scoring, semantic relevance, company
+							intelligence, user feedback, pagination, and large-scale candidate
+							retrieval. I improved onboarding, CRM, HubSpot integrations, account
+							intelligence, opportunity tracking, pipeline management, pursuit
+							workflows, and Stripe billing UX, using PostHog for analytics and issue
+							investigation. I also shaped responsive desktop and mobile experiences
+							with React Native and evolved reusable design systems from Figma using
+							Storybook, Tailwind CSS, and Radix UI.
+						</>
+					}
+				/>
+
+				<ExperienceItem
+					id={'Freelance'}
+					type={'2'}
+					showSection={showSection}
+					section={'fourth'}
+					logo={'/my-experience/code.svg'}
+					company={'Freelance'}
+					role={'Senior Full-Stack Developer'}
+					date={'January 2025 - Present'}
+					onClick={() => {
+						setShowSection(showSection !== 'fourth' ? 'fourth' : null)
+					}}
+					description={
+						<>
+							As a Freelance Senior Full-Stack Developer working remotely, I designed
+							and built a multi-role business platform from the ground up, unifying
+							CRM, quoting, inventory, e-commerce, and internal operations. Using
+							Next.js, TypeScript, Node.js, GraphQL, and APIs, I connected an
+							administrative CRM directly to an online storefront, enabling centralized
+							management of products, inventory, pricing, and availability. I implemented
+							Stripe payment flows and integrated the platform with SAP Business One to
+							synchronize products, stock, prices, and operational data across the
+							internal system, store, and ERP. I secured server-to-server integrations
+							with restricted access, static IP allowlisting, and Cloudflare controls,
+							while automating sales and operational workflows including quoting,
+							QR-based inventory, and CSV updates. I owned frontend, backend,
+							architecture, testing, and CI/CD using Cypress and Jest, reducing a core
+							process from approximately two hours to fifteen minutes.
 						</>
 					}
 				/>
